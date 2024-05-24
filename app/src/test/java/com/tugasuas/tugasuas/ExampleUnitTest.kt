@@ -1,4 +1,4 @@
-package com.ahmad.tugasuas
+package com.tugasuas.tugasuas
 
 import org.junit.Test
 
