@@ -13,16 +13,7 @@
         android:theme="@style/Theme.TugasUas"
         tools:targetApi="31">
         <activity
-            android:name="com.tugasuas.tugasuas.login.login"
-            android:exported="false" />
-        <activity
-            android:name="com.tugasuas.tugasuas.katalog.katalog"
-            android:exported="false" />
-        <activity
-            android:name="com.tugasuas.tugasuas.aboutus.aboutus"
-            android:exported="false" />
-        <activity
-            android:name="com.tugasuas.tugasuas.home.home"
+            android:name="com.tugasuas.tugasuas.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.tugasuas.tugasuas.login.login"
+            android:exported="false" />
     </application>
 
 </manifest>
