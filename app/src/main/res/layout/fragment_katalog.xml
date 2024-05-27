@@ -1,16 +1,145 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/secondary"
-    tools:context="com.tugasuas.tugasuas.katalog.KatalogFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:textSize="18sp"
-        android:layout_gravity="center"
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:id="@+id/FrameHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context="com.tugasuas.tugasuas.katalog.FragmentKatalog">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:text="Jenis Makanan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Space
+                        android:layout_height="0dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:text="Lihat Semua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Katalog1"
+            tools:listitem="@layout/data_makanan"
+            android:scrollbars="horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"/>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:text="Jenis Makanan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Space
+                        android:layout_height="0dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:text="Lihat Semua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Katalog2"
+            android:orientation="horizontal"
+
+            tools:listitem="@layout/data_makanan"
+        android:scrollbars="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="page katalog" />
-
-</FrameLayout>
+        tools:ignore="MissingConstraints"/>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:text="Jenis Makanan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Space
+                        android:layout_height="0dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:text="Lihat Semua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Katalog3"
+            tools:listitem="@layout/data_makanan"
+            android:scrollbars="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"/>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    >
+                    <TextView
+                        android:text="Jenis Makanan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <Space
+                        android:layout_height="0dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        />
+                    <TextView
+                        android:text="Lihat Semua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Katalog4"
+            tools:listitem="@layout/data_makanan"
+            android:scrollbars="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"/>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</layout>
