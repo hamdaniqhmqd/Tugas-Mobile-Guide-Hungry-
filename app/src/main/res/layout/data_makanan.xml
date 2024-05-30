@@ -2,8 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:paddingHorizontal="10dp"
-    android:paddingVertical="5dp"
+    android:layout_margin="4dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -16,16 +15,16 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardGambar"
-            app:layout_constraintStart_toStartOf="@id/Card"
-            app:layout_constraintTop_toTopOf="@+id/Card"
-            app:layout_constraintBottom_toBottomOf="@+id/Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:cardCornerRadius="12dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            app:layout_constraintEnd_toEndOf="@id/Card"
+            app:layout_constraintStart_toStartOf="@id/Card"
+            app:layout_constraintTop_toTopOf="@id/Card">
 
             <ImageView
                 android:id="@+id/ivGambar"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="110dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/rendang"
@@ -36,13 +35,13 @@
             android:id="@+id/cardDesc"
             android:gravity="center_vertical"
             android:layout_marginStart="8dp"
-            app:layout_constraintStart_toEndOf="@id/cardGambar"
-            app:layout_constraintTop_toTopOf="@id/Card"
+            app:layout_constraintTop_toBottomOf="@id/cardGambar"
             app:layout_constraintEnd_toEndOf="@id/Card"
+            app:layout_constraintStart_toStartOf="@id/Card"
             app:layout_constraintBottom_toBottomOf="@id/Card"
             android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_height="0dp">
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/tvJudul"
                 android:layout_marginBottom="6dp"
@@ -51,7 +50,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"/>
+                android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/tvWaktu"
                 android:layout_marginBottom="4dp"

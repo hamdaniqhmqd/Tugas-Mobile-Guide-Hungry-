@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context="com.tugasuas.tugasuas.MainActivity">
 
+
+
     <FrameLayout
         android:id="@+id/FragmentMenu"
         android:layout_width="match_parent"
@@ -18,6 +20,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/Navigasi"
         app:menu="@menu/menu"
+        android:background="@color/primary"
+        app:itemActiveIndicatorStyle="@color/secondary"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:paddingHorizontal="15dp"
