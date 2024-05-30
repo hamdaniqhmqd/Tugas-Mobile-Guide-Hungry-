@@ -13,6 +13,9 @@
         android:theme="@style/Theme.TugasUas"
         tools:targetApi="31">
         <activity
+            android:name="com.tugasuas.tugasuas.allkatalog.AllKatalogActivity"
+            android:exported="false" />
+        <activity
             android:name="com.tugasuas.tugasuas.MainActivity"
             android:exported="true">
             <intent-filter>
