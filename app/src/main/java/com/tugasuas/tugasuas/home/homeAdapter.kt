@@ -1,5 +1,6 @@
 package com.tugasuas.tugasuas.home
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import com.tugasuas.tugasuas.database.Makanan
 import androidx.recyclerview.widget.RecyclerView
 import com.ahmad.tugasuas.R
 
-class homeAdapter(val dataMakanan: List<Makanan>)
+class homeAdapter(private var dataMakanan: List<Makanan>)
     : RecyclerView.Adapter<homeAdapter.MakananViewHolder>(){
 
     class MakananViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
@@ -37,5 +38,11 @@ class homeAdapter(val dataMakanan: List<Makanan>)
         holder.tvJudul.text = makanan.judul
         holder.tvJenis.text = makanan.jenis
         holder.tvWaktu.text = makanan.waktu
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setFilteredList(filterdata: List<Makanan>) {
+        this.dataMakanan = filterdata
+        notifyDataSetChanged()
     }
 }
