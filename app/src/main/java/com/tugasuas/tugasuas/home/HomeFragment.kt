@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
         val data = DataMakanan()
         val filteredList = data.filter {
             it.judul.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) ||
-            it.deskripsi.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
+            it.jenis.name.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
         }
         if (filteredList.isEmpty()) {
             Toast.makeText(context, "Data tidak ditemukan", Toast.LENGTH_SHORT).show()

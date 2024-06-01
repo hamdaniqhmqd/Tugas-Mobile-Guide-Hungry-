@@ -59,28 +59,19 @@
                         app:layout_constraintTop_toTopOf="@id/header_makanan_ringan"
                         app:layout_constraintBottom_toBottomOf="@id/header_makanan_ringan"
                         app:layout_constraintStart_toStartOf="@+id/header_makanan_ringan" />
-                    <TextView
-                        android:id="@+id/detail_makanan_ringan"
-                        app:layout_constraintEnd_toEndOf="@+id/header_makanan_ringan"
-                        app:layout_constraintTop_toTopOf="@id/header_makanan_ringan"
-                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_ringan"
-                        android:text="@string/view_all"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/primary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_makanan_ringan"
-                    app:layout_constraintTop_toBottomOf="@id/header_makanan_ringan"
                     android:layout_width="match_parent"
                     android:layout_height="220dp"
+                    android:layout_marginTop="80dp"
                     android:scrollbars="horizontal"
-                    tools:listitem="@layout/data_makanan"
-                    android:layout_marginTop="4dp"
-                    tools:ignore="MissingConstraints" />
+                    app:layout_constraintTop_toBottomOf="@id/header_makanan_ringan"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:listitem="@layout/data_makanan" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -110,18 +101,6 @@
                         app:layout_constraintBottom_toBottomOf="@id/header_makanan_berat"
                         app:layout_constraintStart_toStartOf="@+id/header_makanan_berat" />
 
-                    <TextView
-                        android:id="@+id/detail_makanan_berat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/view_all"
-                        android:textColor="@color/primary"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_berat"
-                        app:layout_constraintEnd_toEndOf="@+id/header_makanan_berat"
-                        app:layout_constraintTop_toTopOf="@id/header_makanan_berat"
-                        app:layout_constraintVertical_bias="0.4" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -161,17 +140,7 @@
                         app:layout_constraintTop_toTopOf="@id/header_makanan_sayur"
                         app:layout_constraintBottom_toBottomOf="@id/header_makanan_sayur"
                         app:layout_constraintStart_toStartOf="@+id/header_makanan_sayur" />
-                    <TextView
-                        android:id="@+id/detail_makanan_sayur"
-                        app:layout_constraintEnd_toEndOf="@+id/header_makanan_sayur"
-                        app:layout_constraintTop_toTopOf="@id/header_makanan_sayur"
-                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_sayur"
-                        android:text="@string/view_all"
-                        android:textSize="10sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/primary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -211,17 +180,7 @@
                         app:layout_constraintTop_toTopOf="@id/header_minuman"
                         app:layout_constraintBottom_toBottomOf="@id/header_minuman"
                         app:layout_constraintStart_toStartOf="@+id/header_minuman" />
-                    <TextView
-                        android:id="@+id/detail_minuman"
-                        app:layout_constraintEnd_toEndOf="@+id/header_minuman"
-                        app:layout_constraintTop_toTopOf="@id/header_minuman"
-                        app:layout_constraintBottom_toBottomOf="@id/header_minuman"
-                        android:text="@string/view_all"
-                        android:textSize="10sp"
-                        android:textColor="@color/primary"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -261,17 +220,7 @@
                         app:layout_constraintTop_toTopOf="@id/header_kue"
                         app:layout_constraintBottom_toBottomOf="@id/header_kue"
                         app:layout_constraintStart_toStartOf="@+id/header_kue" />
-                    <TextView
-                        android:id="@+id/detail_kue"
-                        app:layout_constraintEnd_toEndOf="@+id/header_kue"
-                        app:layout_constraintTop_toTopOf="@id/header_kue"
-                        app:layout_constraintBottom_toBottomOf="@id/header_kue"
-                        android:text="@string/view_all"
-                        android:textSize="10sp"
-                        android:textColor="@color/primary"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.recyclerview.widget.RecyclerView

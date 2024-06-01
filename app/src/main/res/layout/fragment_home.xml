@@ -42,6 +42,7 @@
                 android:queryHint="Cari sekarang ..."
                 android:layout_marginTop="10dp"
                 android:textSize="14sp"
+                android:inputType="text"
                 app:layout_constraintEnd_toStartOf="@id/garis_kanan"
                 app:layout_constraintStart_toEndOf="@id/garis_kiri"
                 app:layout_constraintTop_toTopOf="@id/wadah"

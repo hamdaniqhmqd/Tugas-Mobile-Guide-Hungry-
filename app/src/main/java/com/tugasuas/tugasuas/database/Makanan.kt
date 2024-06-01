@@ -3,7 +3,7 @@ package com.tugasuas.tugasuas.database
 import com.ahmad.tugasuas.R
 import java.io.Serializable
 
-// enum class
+// enum class untuk pilihan jenis makanan
 enum class JenisMakanan(val displayName: String) {
     MAKANAN_BERAT("Makanan Berat"),
     MAKANAN_RINGAN("Makanan Ringan"),
@@ -21,69 +21,65 @@ data class Makanan(
     val judul: String,
     val jenis: JenisMakanan,
     val waktu: String,
-    val alat: List<String>,
     val bahan: List<String>,
-    val langkah: List<String>,
-    val deskripsi: String
+    val langkah: List<String>
 ) : Serializable
 
 fun DataMakanan(): MutableList<Makanan> {
     val data = mutableListOf<Makanan>()
+    // per data
     data.add(
         Makanan(
-            R.drawable.rendang, "Rendang",
-            JenisMakanan.MAKANAN_BERAT,
-            "24.00",
-            listOf("Pisau", "Panci"),
-            listOf("Daging sapi", "Bumbu rendang"),
-            listOf("Potong daging", "Masak bumbu"),
-            "Rendang adalah makanan khas Padang."
+            R.drawable.rendang, // masukan nama gambar
+            "Rendang", // nama makanan
+            JenisMakanan.MAKANAN_BERAT, // jenis makanan
+            "24.00", // waktu memasak makanan
+            listOf("Daging sapi", "Bumbu rendang"), // bahan
+            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
         )
     )
+    // per data
     data.add(
         Makanan(
-            R.drawable.rendang,
-            "Air Putih",
-            JenisMakanan.MAKANAN_BERAT,
-            "00.00",
-            listOf("Pisau", "Panci"),
-            listOf("Daging sapi", "Bumbu rendang"),
-            listOf("Potong daging", "Masak bumbu"),
-            "Rendang adalah makanan khas Padang."
+            R.drawable.rendang, // masukan nama gambar
+            "Rendang", // nama makanan
+            JenisMakanan.MAKANAN_RINGAN, // jenis makanan
+            "24.00", // waktu memasak makanan
+            listOf("Daging sapi", "Bumbu rendang"), // bahan
+            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
         )
     )
+    // per data
     data.add(
         Makanan(
-            R.drawable.rendang,
-            "Kue", JenisMakanan.MINUMAN,
-            "15.00",
-            listOf("Pisau", "Panci"),
-            listOf("Daging sapi", "Bumbu rendang"),
-            listOf("Potong daging", "Masak bumbu"),
-            "Rendang adalah makanan khas Padang."
+            R.drawable.rendang, // masukan nama gambar
+            "Rendang", // nama makanan
+            JenisMakanan.MINUMAN, // jenis makanan
+            "24.00", // waktu memasak makanan
+            listOf("Daging sapi", "Bumbu rendang"), // bahan
+            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
         )
     )
+    // per data
     data.add(
         Makanan(
-            R.drawable.rendang,
-            "Kue", JenisMakanan.KUE,
-            "15.00",
-            listOf("Pisau", "Panci"),
-            listOf("Daging sapi", "Bumbu rendang"),
-            listOf("Potong daging", "Masak bumbu"),
-            "Rendang adalah makanan khas Padang."
+            R.drawable.rendang, // masukan nama gambar
+            "Rendang", // nama makanan
+            JenisMakanan.SAYUR, // jenis makanan
+            "24.00", // waktu memasak makanan
+            listOf("Daging sapi", "Bumbu rendang"), // bahan
+            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
         )
     )
+    // per data
     data.add(
         Makanan(
-            R.drawable.rendang,
-            "Air Putih",
-            JenisMakanan.SAYUR,
-            "00.00",
-            listOf("Pisau", "Panci"),
-            listOf("Daging sapi", "Bumbu rendang"),
-            listOf("Potong daging", "Masak bumbu"),
-            "Rendang adalah makanan khas Padang."
+            R.drawable.rendang, // masukan nama gambar
+            "Rendang", // nama makanan
+            JenisMakanan.KUE, // jenis makanan
+            "24.00", // waktu memasak makanan
+            listOf("Daging sapi", "Bumbu rendang"), // bahan
+            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
         )
     )
     // Tambahkan data makanan lainnya di sini

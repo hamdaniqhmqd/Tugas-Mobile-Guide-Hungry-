@@ -13,6 +13,8 @@ import com.ahmad.tugasuas.R
 class katalogAdapter(private var dataMakanan: List<Makanan>)
     : RecyclerView.Adapter<katalogAdapter.MakananViewHolder>(){
 
+    var onItemClick: ((Makanan) -> Unit)? = null
+
     class MakananViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val ivMhs: ImageView = row.findViewById(R.id.ivGambar)
         val tvJudul: TextView = row.findViewById(R.id.tvJudul)
@@ -38,11 +40,9 @@ class katalogAdapter(private var dataMakanan: List<Makanan>)
         holder.tvJudul.text = makanan.judul
         holder.tvJenis.text = makanan.jenis.toString()
         holder.tvWaktu.text = makanan.waktu
-    }
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun setFilteredList(filterdata: List<Makanan>) {
-        this.dataMakanan = filterdata
-        notifyDataSetChanged()
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(makanan)
+        }
     }
 }

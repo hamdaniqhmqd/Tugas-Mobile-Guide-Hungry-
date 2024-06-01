@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmad.tugasuas.databinding.FragmentKatalogBinding
 import com.tugasuas.tugasuas.database.JenisMakanan
-import com.tugasuas.tugasuas.database.Makanan
 import com.tugasuas.tugasuas.database.DataMakanan
-import com.tugasuas.tugasuas.home.homeAdapter
+import com.tugasuas.tugasuas.detail_data.detail_data
 
 class KatalogFragment : Fragment() {
     private var _binding: FragmentKatalogBinding? = null
@@ -34,30 +32,61 @@ class KatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // untuk menampilkan data sesuai dengan jenis datanya
         val makanan = DataMakanan()
-        // mengatur filter makanan berdasarkan jenis makanan ringan
+        // jenis makananan ringan
+        val makananRingan = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MAKANAN_RINGAN }.take(5))
         binding.rvMakananRingan.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val makananRingan = makanan.filter { it.jenis == JenisMakanan.MAKANAN_RINGAN }.take(5)
-        binding.rvMakananRingan.adapter = katalogAdapter(makananRingan)
+        binding.rvMakananRingan.adapter = makananRingan
+        // jika item makanan ringan di klik maka akan di direct ke tampilan detail data
+        makananRingan.onItemClick = { makanan ->
+            val intent = Intent(context, detail_data::class.java)
+            intent.putExtra("Makanan", makanan)
+            startActivity(intent)
+        }
 
-        //mengatur filter makanan berdasarkan jenis makanan berat
+        // jenis makananan berat
+        val makananBerat = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MAKANAN_BERAT }.take(5))
         binding.rvMakananBerat.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val makananBerat = makanan.filter { it.jenis == JenisMakanan.MAKANAN_BERAT }.take(5)
-        binding.rvMakananBerat.adapter = katalogAdapter(makananBerat)
+        binding.rvMakananBerat.adapter = makananBerat
+        // jika item makanan berat di klik maka akan di direct ke tampilan detail data
+        makananBerat.onItemClick = { makanan ->
+            val intent = Intent(context, detail_data::class.java)
+            intent.putExtra("Makanan", makanan)
+            startActivity(intent)
+        }
 
-        //mengatur filter makanan berdasarkan jenis makanan sayur
+        // jenis sayur
+        val Sayur = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.SAYUR }.take(5))
         binding.rvMakananSayur.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val makananSayur = makanan.filter { it.jenis == JenisMakanan.SAYUR}.take(5)
-        binding.rvMakananSayur.adapter = katalogAdapter(makananSayur)
+        binding.rvMakananSayur.adapter = Sayur
+        // jika item sayur di klik maka akan di direct ke tampilan detail data
+        Sayur.onItemClick = { makanan ->
+            val intent = Intent(context, detail_data::class.java)
+            intent.putExtra("Makanan", makanan)
+            startActivity(intent)
+        }
 
-        //mengatur filter makanan berdasarkan jenis minuman
+        // jenis minuman
+        val Minuman = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MINUMAN }.take(5))
         binding.rvMinuman.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val minuman = makanan.filter { it.jenis == JenisMakanan.MINUMAN }.take(5)
-        binding.rvMinuman.adapter = katalogAdapter(minuman)
+        binding.rvMinuman.adapter = Minuman
+        // jika item minuman di klik maka akan di direct ke tampilan detail data
+        Minuman.onItemClick = { makanan ->
+            val intent = Intent(context, detail_data::class.java)
+            intent.putExtra("Makanan", makanan)
+            startActivity(intent)
+        }
 
-        //mengatur filter makanan berdasarkan jenis kue
+        // jenis kui
+        val Kue = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.KUE }.take(5))
         binding.rvKue.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        val kue = makanan.filter { it.jenis == JenisMakanan.MINUMAN }.take(5)
-        binding.rvKue.adapter = katalogAdapter(kue)
+        binding.rvKue.adapter = Kue
+        // jika item kue di klik maka akan di direct ke tampilan detail data
+        Kue.onItemClick = { makanan ->
+            val intent = Intent(context, detail_data::class.java)
+            intent.putExtra("Makanan", makanan)
+            startActivity(intent)
+        }
     }
 }
