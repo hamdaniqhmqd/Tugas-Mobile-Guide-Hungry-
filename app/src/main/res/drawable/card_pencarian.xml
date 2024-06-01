@@ -3,6 +3,6 @@
     android:shape="rectangle">
     <corners android:radius="10dp" /> <!-- Radius sudut yang diinginkan -->
     <solid android:color="@color/white" /> <!-- Warna latar belakang -->
-    <stroke android:color="@color/secondary"
+    <stroke android:color="@color/primary"
         android:width="2dp"/>
 </shape>

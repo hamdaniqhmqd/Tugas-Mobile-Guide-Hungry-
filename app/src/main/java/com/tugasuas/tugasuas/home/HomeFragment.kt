@@ -1,5 +1,6 @@
 package com.tugasuas.tugasuas.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,11 +14,13 @@ import com.ahmad.tugasuas.R
 import com.ahmad.tugasuas.databinding.FragmentHomeBinding
 import com.tugasuas.tugasuas.database.DataMakanan
 import com.tugasuas.tugasuas.database.Makanan
+import com.tugasuas.tugasuas.detail_data.detail_data
 import java.util.Locale
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private lateinit var HomeAdapter: homeAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,17 +52,23 @@ class HomeFragment : Fragment() {
             }
 
         })
+        val makanan = DataMakanan()
+        HomeAdapter = homeAdapter(makanan)
 
         binding.ViewDataMakanan.layoutManager = GridLayoutManager(context, 2)
-        val makanan = DataMakanan()
-        binding.ViewDataMakanan.adapter = homeAdapter(makanan)
+        binding.ViewDataMakanan.adapter = HomeAdapter
+
+        HomeAdapter.onItemClick = {
+            val intent = Intent(context, detail_data::class.java)
+            intent.putExtra("Makanan", it)
+            startActivity(intent)
+        }
     }
 
     private fun filterList(query: String) {
         val data = DataMakanan()
         val filteredList = data.filter {
             it.judul.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) ||
-            it.jenis.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) ||
             it.deskripsi.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
         }
         if (filteredList.isEmpty()) {
