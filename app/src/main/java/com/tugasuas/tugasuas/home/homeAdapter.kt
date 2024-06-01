@@ -14,7 +14,7 @@ import com.ahmad.tugasuas.R
 class homeAdapter(private var dataMakanan: List<Makanan>)
     : RecyclerView.Adapter<homeAdapter.MakananViewHolder>(){
 
-        var onItemClick: ((Makanan) -> Unit)? = null
+    var onItemClick: ((Makanan) -> Unit)? = null
     class MakananViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val ivMhs: ImageView = row.findViewById(R.id.ivGambar)
         val tvJudul: TextView = row.findViewById(R.id.tvJudul)

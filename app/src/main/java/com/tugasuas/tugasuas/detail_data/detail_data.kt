@@ -1,7 +1,10 @@
 package com.tugasuas.tugasuas.detail_data
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.ahmad.tugasuas.R
 import com.ahmad.tugasuas.databinding.ActivityDetailDataBinding
 import com.tugasuas.tugasuas.database.Makanan
+import com.tugasuas.tugasuas.home.HomeFragment
 
 class detail_data : AppCompatActivity() {
     private lateinit var binding: ActivityDetailDataBinding
@@ -24,20 +28,15 @@ class detail_data : AppCompatActivity() {
             binding.deskripsiNama.text = makanan.judul
             binding.deskripsiJenis.text = makanan.jenis.toString()
             binding.deskripsiWaktu.text = makanan.waktu
-            binding.deskripsiAlat.text = "Alat:\n" + makanan.alat.joinToString("\n") {
-                alat -> "${makanan.alat.indexOf(alat) + 1}. $alat"
-            }
-            binding.deskripsiBahan.text = "Bahan:\n" + makanan.bahan.joinToString("\n") {
+            binding.deskripsiBahan.text = makanan.bahan.joinToString("\n") {
                 bahan -> "${makanan.bahan.indexOf(bahan) + 1}. $bahan"
             }
-            binding.deskripsiLangkah.text = "Langkah:\n" + makanan.langkah.joinToString("\n") {
+            binding.deskripsiLangkah.text = makanan.langkah.joinToString("\n") {
                 langkah -> "${makanan.langkah.indexOf(langkah) + 1}. $langkah"
             }
-            binding.deskripsiDeskripsi.text = makanan.deskripsi
-        }
-
-        binding.detailKembali.setOnClickListener {
-
+            binding.detailkembali.setOnClickListener{
+                onBackPressed()
+            }
         }
     }
 }
