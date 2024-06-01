@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <shape xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <!-- Warna background shape -->
+        <solid android:color="@color/primary"/> <!-- Ganti dengan warna yang diinginkan -->
+
+        <!-- Radius untuk sudut-sudut -->
+        <corners
+            android:topLeftRadius="0dp"
+            android:topRightRadius="0dp"
+            android:bottomLeftRadius="65dp"
+            android:bottomRightRadius="65dp"/> <!-- Ganti dengan radius yang diinginkan -->
+
+         <!-- Ganti dengan warna yang diinginkan -->
+    </shape>
