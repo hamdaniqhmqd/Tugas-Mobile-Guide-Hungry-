@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -9,219 +10,283 @@
         android:id="@+id/FrameHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:fillViewport="true"
+        android:background="@color/white_smooth"
         tools:context="com.tugasuas.tugasuas.katalog.FragmentKatalog">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingTop="10dp"
+            android:paddingHorizontal="10dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/TitleFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="40dp"
+                android:textSize="18sp"
+                android:paddingHorizontal="10dp"
+                android:gravity="center_vertical"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="@string/tampilan_katalog_makanan"
+                tools:ignore="MissingConstraints" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Makanan Ringan"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/btn_makanan_ringan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Lihat Semua"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_makanan_ringan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filterMakananRingan"
                 android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Sayur-Sayuran"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/btn_sayur_sayuran"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Lihat Semua"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_sayur_sayuran"
+                app:layout_constraintTop_toBottomOf="@+id/TitleFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                tools:ignore="MissingConstraints">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header_makanan_ringan"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints,Orientation">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/title_makanan_ringan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="Makanan Ringan"
+                        android:textColor="@color/primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/header_makanan_ringan"
+                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_ringan"
+                        app:layout_constraintStart_toStartOf="@+id/header_makanan_ringan" />
+                    <TextView
+                        android:id="@+id/detail_makanan_ringan"
+                        app:layout_constraintEnd_toEndOf="@+id/header_makanan_ringan"
+                        app:layout_constraintTop_toTopOf="@id/header_makanan_ringan"
+                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_ringan"
+                        android:text="@string/view_all"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_makanan_ringan"
+                    app:layout_constraintTop_toBottomOf="@id/header_makanan_ringan"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scrollbars="horizontal"
+                    tools:listitem="@layout/data_makanan"
+                    android:layout_marginTop="4dp"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filterMakananBerat"
+                app:layout_constraintTop_toBottomOf="@+id/filterMakananRingan"
                 android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Gorengan"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/btn_gorengan"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Lihat Semua"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_gorengan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                tools:ignore="MissingConstraints">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header_makanan_berat"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints,Orientation">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/title_makanan_berat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="Makanan Berat"
+                        android:textColor="@color/primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/header_makanan_berat"
+                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_berat"
+                        app:layout_constraintStart_toStartOf="@+id/header_makanan_berat" />
+
+                    <TextView
+                        android:id="@+id/detail_makanan_berat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/view_all"
+                        android:textColor="@color/primary"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_berat"
+                        app:layout_constraintEnd_toEndOf="@+id/header_makanan_berat"
+                        app:layout_constraintTop_toTopOf="@id/header_makanan_berat"
+                        app:layout_constraintVertical_bias="0.4" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_makanan_berat"
+                    app:layout_constraintTop_toBottomOf="@id/header_makanan_berat"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scrollbars="horizontal"
+                    tools:listitem="@layout/data_makanan"
+                    android:layout_marginTop="8dp"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filterMakananSayur"
                 android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Kue"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/btn_kue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Lihat Semua"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_kue"
+                app:layout_constraintTop_toBottomOf="@+id/filterMakananBerat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                tools:ignore="MissingConstraints">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header_makanan_sayur"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints,Orientation">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/title_makanan_sayur"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="Makanan Sayur"
+                        android:textColor="@color/primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/header_makanan_sayur"
+                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_sayur"
+                        app:layout_constraintStart_toStartOf="@+id/header_makanan_sayur" />
+                    <TextView
+                        android:id="@+id/detail_makanan_sayur"
+                        app:layout_constraintEnd_toEndOf="@+id/header_makanan_sayur"
+                        app:layout_constraintTop_toTopOf="@id/header_makanan_sayur"
+                        app:layout_constraintBottom_toBottomOf="@id/header_makanan_sayur"
+                        android:text="@string/view_all"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_makanan_sayur"
+                    app:layout_constraintTop_toBottomOf="@id/header_makanan_sayur"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scrollbars="horizontal"
+                    tools:listitem="@layout/data_makanan"
+                    android:layout_marginTop="4dp"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filterMinuman"
+                app:layout_constraintTop_toBottomOf="@+id/filterMakananSayur"
                 android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Minuman"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/btn_minuman"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Lihat Semua"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_minuman"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                tools:ignore="MissingConstraints">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header_minuman"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints,Orientation">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/title_minuman"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="Minuman"
+                        android:textColor="@color/primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/header_minuman"
+                        app:layout_constraintBottom_toBottomOf="@id/header_minuman"
+                        app:layout_constraintStart_toStartOf="@+id/header_minuman" />
+                    <TextView
+                        android:id="@+id/detail_minuman"
+                        app:layout_constraintEnd_toEndOf="@+id/header_minuman"
+                        app:layout_constraintTop_toTopOf="@id/header_minuman"
+                        app:layout_constraintBottom_toBottomOf="@id/header_minuman"
+                        android:text="@string/view_all"
+                        android:textSize="10sp"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_minuman"
+                    app:layout_constraintTop_toBottomOf="@id/header_minuman"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scrollbars="horizontal"
+                    tools:listitem="@layout/data_makanan"
+                    android:layout_marginTop="8dp"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/filterKue"
+                app:layout_constraintTop_toBottomOf="@+id/filterMinuman"
                 android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Makanan Berat"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/btn_makanan_berat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Lihat Semua"
-                    android:textColor="@android:color/holo_blue_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_makanan_berat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
+                tools:ignore="MissingConstraints">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header_kue"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints,Orientation">
 
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/title_kue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:text="Kue"
+                        android:textColor="@color/primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@id/header_kue"
+                        app:layout_constraintBottom_toBottomOf="@id/header_kue"
+                        app:layout_constraintStart_toStartOf="@+id/header_kue" />
+                    <TextView
+                        android:id="@+id/detail_kue"
+                        app:layout_constraintEnd_toEndOf="@+id/header_kue"
+                        app:layout_constraintTop_toTopOf="@id/header_kue"
+                        app:layout_constraintBottom_toBottomOf="@id/header_kue"
+                        android:text="@string/view_all"
+                        android:textSize="10sp"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_kue"
+                    app:layout_constraintTop_toBottomOf="@id/header_kue"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scrollbars="horizontal"
+                    tools:listitem="@layout/data_makanan"
+                    android:layout_marginTop="8dp"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 </layout>

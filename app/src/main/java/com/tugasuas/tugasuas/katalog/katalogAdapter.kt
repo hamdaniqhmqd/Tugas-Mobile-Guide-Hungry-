@@ -1,4 +1,4 @@
-package com.tugasuas.tugasuas.home
+package com.tugasuas.tugasuas.katalog
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,15 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
 import com.tugasuas.tugasuas.database.Makanan
 import androidx.recyclerview.widget.RecyclerView
 import com.ahmad.tugasuas.R
 
-class homeAdapter(private var dataMakanan: List<Makanan>)
-    : RecyclerView.Adapter<homeAdapter.MakananViewHolder>(){
+class katalogAdapter(private var dataMakanan: List<Makanan>)
+    : RecyclerView.Adapter<katalogAdapter.MakananViewHolder>(){
 
-        var onItemClick: ((Makanan) -> Unit)? = null
     class MakananViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val ivMhs: ImageView = row.findViewById(R.id.ivGambar)
         val tvJudul: TextView = row.findViewById(R.id.tvJudul)
@@ -40,10 +38,6 @@ class homeAdapter(private var dataMakanan: List<Makanan>)
         holder.tvJudul.text = makanan.judul
         holder.tvJenis.text = makanan.jenis.toString()
         holder.tvWaktu.text = makanan.waktu
-
-        holder.itemView.setOnClickListener {
-            onItemClick?.invoke(makanan)
-        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

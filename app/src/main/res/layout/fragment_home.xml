@@ -36,12 +36,11 @@
                 android:id="@+id/inputPencarian"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginHorizontal="20dp"
                 android:background="@drawable/card_pencarian"
-                android:gravity="center_vertical"
                 android:closeIcon="@drawable/icon_close"
+                android:iconifiedByDefault="false"
+                android:queryHint="Cari sekarang ..."
                 android:layout_marginTop="10dp"
-                android:paddingHorizontal="4dp"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@id/garis_kanan"
                 app:layout_constraintStart_toEndOf="@id/garis_kiri"
@@ -68,6 +67,4 @@
 
     </FrameLayout>
 </layout>
-
-<!--<EditText-->
 

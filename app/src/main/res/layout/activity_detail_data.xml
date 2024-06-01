@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.tugasuas.tugasuas.detail_data.detail_data">
+
+        <ImageView
+            android:id="@+id/detail_Gambar"
+            android:src="@drawable/rendang"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/detail_kembali"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/icon_back"
+            android:background="@drawable/circle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            tools:ignore="MissingConstraints" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            tools:ignore="MissingConstraints">
+            <LinearLayout
+                android:id="@+id/detail_deskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="270dp"
+                android:background="@drawable/card_rounded_atas"
+                android:backgroundTint="@color/white_smooth"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:paddingTop="15dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/deskripsi_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints">
+
+                    <TextView
+                        android:id="@+id/deskripsi_jenis"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toTopOf="@id/deskripsi_header"
+                        app:layout_constraintStart_toStartOf="@id/deskripsi_header"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/deskripsi_waktu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12:00"
+                        app:layout_constraintTop_toTopOf="@id/deskripsi_header"
+                        app:layout_constraintEnd_toEndOf="@id/deskripsi_header"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/deskripsi_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Nama Makanan"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:id="@+id/Deskripsi_bahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/label_bahan"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bahan :" />
+
+                    <TextView
+                        android:id="@+id/deskripsi_Bahan"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="1. test\n2. test"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Deskripsi_alat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/label_alat"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alat :" />
+
+                    <TextView
+                        android:id="@+id/deskripsi_alat"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="1. test\n2. test"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Deskripsi_langkah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/label_langkah"
+                        android:textSize="14dp"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Bahan :" />
+
+                    <TextView
+                        android:id="@+id/deskripsi_langkah"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:text="1. test\n2. test"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/deskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/label_deskripsi"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:text="Deskrpsi : "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/deskripsi_deskripsi"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:layout_marginTop="2dp"
+                        android:text="Deskrpsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

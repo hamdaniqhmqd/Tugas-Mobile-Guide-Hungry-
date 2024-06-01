@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ahmad.tugasuas.databinding.FragmentKatalogBinding
-import com.tugasuas.tugasuas.adapters.HeadlineFoodAdapter
-import com.tugasuas.tugasuas.allkatalog.AllKatalogActivity
-import com.tugasuas.tugasuas.utils.FakeData
+import com.tugasuas.tugasuas.database.JenisMakanan
+import com.tugasuas.tugasuas.database.Makanan
+import com.tugasuas.tugasuas.database.DataMakanan
+import com.tugasuas.tugasuas.home.homeAdapter
 
 class KatalogFragment : Fragment() {
     private var _binding: FragmentKatalogBinding? = null
@@ -32,117 +34,30 @@ class KatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setListeners()
-        setRecyclerViews()
-    }
+        val makanan = DataMakanan()
+        // mengatur filter makanan berdasarkan jenis makanan ringan
+        binding.rvMakananRingan.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val makananRingan = makanan.filter { it.jenis == JenisMakanan.MAKANAN_RINGAN }.take(5)
+        binding.rvMakananRingan.adapter = katalogAdapter(makananRingan)
 
-    private fun setListeners() {
-        binding.apply {
-            btnMakananRingan.setOnClickListener {
-                val iAllKatalogActivity = Intent(requireActivity(), AllKatalogActivity::class.java)
-                iAllKatalogActivity.putParcelableArrayListExtra(
-                    AllKatalogActivity.EXTRA_LIST_FOOD,
-                    FakeData.foodList
-                )
-                startActivity(iAllKatalogActivity)
-            }
+        //mengatur filter makanan berdasarkan jenis makanan berat
+        binding.rvMakananBerat.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val makananBerat = makanan.filter { it.jenis == JenisMakanan.MAKANAN_BERAT }.take(5)
+        binding.rvMakananBerat.adapter = katalogAdapter(makananBerat)
 
-            btnKue.setOnClickListener {
-                val iAllKatalogActivity = Intent(requireActivity(), AllKatalogActivity::class.java)
-                iAllKatalogActivity.putParcelableArrayListExtra(
-                    AllKatalogActivity.EXTRA_LIST_FOOD,
-                    FakeData.foodList
-                )
-                startActivity(iAllKatalogActivity)
-            }
+        //mengatur filter makanan berdasarkan jenis makanan sayur
+        binding.rvMakananSayur.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val makananSayur = makanan.filter { it.jenis == JenisMakanan.SAYUR}.take(5)
+        binding.rvMakananSayur.adapter = katalogAdapter(makananSayur)
 
-            btnMinuman.setOnClickListener {
-                val iAllKatalogActivity = Intent(requireActivity(), AllKatalogActivity::class.java)
-                iAllKatalogActivity.putParcelableArrayListExtra(
-                    AllKatalogActivity.EXTRA_LIST_FOOD,
-                    FakeData.foodList
-                )
-                startActivity(iAllKatalogActivity)
-            }
+        //mengatur filter makanan berdasarkan jenis minuman
+        binding.rvMinuman.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val minuman = makanan.filter { it.jenis == JenisMakanan.MINUMAN }.take(5)
+        binding.rvMinuman.adapter = katalogAdapter(minuman)
 
-            btnGorengan.setOnClickListener {
-                val iAllKatalogActivity = Intent(requireActivity(), AllKatalogActivity::class.java)
-                iAllKatalogActivity.putParcelableArrayListExtra(
-                    AllKatalogActivity.EXTRA_LIST_FOOD,
-                    FakeData.foodList
-                )
-                startActivity(iAllKatalogActivity)
-            }
-
-            btnMakananBerat.setOnClickListener {
-                val iAllKatalogActivity = Intent(requireActivity(), AllKatalogActivity::class.java)
-                iAllKatalogActivity.putParcelableArrayListExtra(
-                    AllKatalogActivity.EXTRA_LIST_FOOD,
-                    FakeData.foodList
-                )
-                startActivity(iAllKatalogActivity)
-            }
-
-            btnSayurSayuran.setOnClickListener {
-                val iAllKatalogActivity = Intent(requireActivity(), AllKatalogActivity::class.java)
-                iAllKatalogActivity.putParcelableArrayListExtra(
-                    AllKatalogActivity.EXTRA_LIST_FOOD,
-                    FakeData.foodList
-                )
-                startActivity(iAllKatalogActivity)
-            }
-        }
-    }
-
-    private fun setRecyclerViews() {
-        binding.apply {
-            rvMakananRingan.apply {
-                val rvAdapter = HeadlineFoodAdapter().apply {
-                    submitList(FakeData.foodList)
-                }
-                adapter = rvAdapter
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            }
-
-            rvSayurSayuran.apply {
-                val rvAdapter = HeadlineFoodAdapter().apply {
-                    submitList(FakeData.foodList)
-                }
-                adapter = rvAdapter
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            }
-
-            rvKue.apply {
-                val rvAdapter = HeadlineFoodAdapter().apply {
-                    submitList(FakeData.foodList)
-                }
-                adapter = rvAdapter
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            }
-
-            rvGorengan.apply {
-                val rvAdapter = HeadlineFoodAdapter().apply {
-                    submitList(FakeData.foodList)
-                }
-                adapter = rvAdapter
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            }
-
-            rvMinuman.apply {
-                val rvAdapter = HeadlineFoodAdapter().apply {
-                    submitList(FakeData.foodList)
-                }
-                adapter = rvAdapter
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            }
-
-            rvMakananBerat.apply {
-                val rvAdapter = HeadlineFoodAdapter().apply {
-                    submitList(FakeData.foodList)
-                }
-                adapter = rvAdapter
-                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            }
-        }
+        //mengatur filter makanan berdasarkan jenis kue
+        binding.rvKue.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val kue = makanan.filter { it.jenis == JenisMakanan.MINUMAN }.take(5)
+        binding.rvKue.adapter = katalogAdapter(kue)
     }
 }
