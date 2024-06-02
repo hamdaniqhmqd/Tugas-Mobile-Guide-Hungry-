@@ -56,7 +56,7 @@ class KatalogFragment : Fragment() {
         }
 
         // jenis makananan berat
-        val makananBerat = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MAKANAN_BERAT }.take(5))
+        val makananBerat = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MAKANAN_BERAT })
         binding.rvMakananBerat.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMakananBerat.adapter = makananBerat
         // jika item makanan berat di klik maka akan di direct ke tampilan detail data
@@ -67,7 +67,7 @@ class KatalogFragment : Fragment() {
         }
 
         // jenis sayur
-        val Sayur = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.SAYUR }.take(5))
+        val Sayur = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.SAYUR })
         binding.rvMakananSayur.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMakananSayur.adapter = Sayur
         // jika item sayur di klik maka akan di direct ke tampilan detail data
@@ -78,7 +78,7 @@ class KatalogFragment : Fragment() {
         }
 
         // jenis minuman
-        val Minuman = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MINUMAN }.take(5))
+        val Minuman = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MINUMAN })
         binding.rvMinuman.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMinuman.adapter = Minuman
         // jika item minuman di klik maka akan di direct ke tampilan detail data
@@ -89,7 +89,7 @@ class KatalogFragment : Fragment() {
         }
 
         // jenis kui
-        val Kue = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.KUE }.take(5))
+        val Kue = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.KUE })
         binding.rvKue.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvKue.adapter = Kue
         // jika item kue di klik maka akan di direct ke tampilan detail data

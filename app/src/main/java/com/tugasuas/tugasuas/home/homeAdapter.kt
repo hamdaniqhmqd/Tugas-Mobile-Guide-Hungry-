@@ -23,6 +23,7 @@ class homeAdapter(private var dataMakanan: List<Makanan>) :
         val tvJudul: TextView = row.findViewById(R.id.tvJudul)
         val tvJenis: TextView = row.findViewById(R.id.tvJenis)
         val tvWaktu: TextView = row.findViewById(R.id.tvWaktu)
+        val tvAsal: TextView = row.findViewById(R.id.tvAsal)
     }
 
     // untuk membuat ViewHolder baru yang berisi tampilan item
@@ -45,7 +46,8 @@ class homeAdapter(private var dataMakanan: List<Makanan>) :
         holder.ivMhs.setImageResource(makanan.gambar)
         holder.tvJudul.text = makanan.judul
         holder.tvJenis.text = makanan.jenis.toString()
-        holder.tvWaktu.text = makanan.waktu
+        holder.tvWaktu.visibility = View.GONE
+        holder.tvAsal.text = makanan.asal
 
         // jika item dari recyclerView di click makan
         // akan mengeksekusi kode didalamnya

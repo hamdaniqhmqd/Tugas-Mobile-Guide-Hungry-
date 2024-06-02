@@ -20,6 +20,7 @@ class katalogAdapter(private var dataMakanan: List<Makanan>)
         val tvJudul: TextView = row.findViewById(R.id.tvJudul)
         val tvJenis: TextView = row.findViewById(R.id.tvJenis)
         val tvWaktu: TextView = row.findViewById(R.id.tvWaktu)
+        val tvAsal: TextView = row.findViewById(R.id.tvAsal)
     }
     // untuk membuat ViewHolder baru yang berisi tampilan item
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MakananViewHolder {
@@ -40,8 +41,9 @@ class katalogAdapter(private var dataMakanan: List<Makanan>)
         val makanan = dataMakanan[position]
         holder.ivMhs.setImageResource(makanan.gambar)
         holder.tvJudul.text = makanan.judul
-        holder.tvJenis.text = makanan.jenis.toString()
+        holder.tvJenis.visibility = View.GONE
         holder.tvWaktu.text = makanan.waktu
+        holder.tvAsal.text = makanan.asal
 
         // jika item dari recyclerView di click makan
         // akan mengeksekusi kode didalamnya
