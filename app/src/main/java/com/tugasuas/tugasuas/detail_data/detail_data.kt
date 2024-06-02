@@ -16,6 +16,7 @@ import com.tugasuas.tugasuas.home.HomeFragment
 
 class detail_data : AppCompatActivity() {
     private lateinit var binding: ActivityDetailDataBinding
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +31,18 @@ class detail_data : AppCompatActivity() {
             binding.deskripsiWaktu.text = makanan.waktu  // untuk menampilkan waktu
             binding.deskripsiBahan.text = makanan.bahan.joinToString("\n") {
                 // menampilkan data bahan secara urut
-                bahan -> "${makanan.bahan.indexOf(bahan) + 1}. $bahan" }
+                    bahan ->
+                "${makanan.bahan.indexOf(bahan) + 1}. $bahan"
+            }
             binding.deskripsiLangkah.text = makanan.langkah.joinToString("\n") {
                 // menampilkan data bahan secara urut
-                langkah -> "${makanan.langkah.indexOf(langkah) + 1}. $langkah" }
+                    langkah ->
+                "${makanan.langkah.indexOf(langkah) + 1}. $langkah"
+            }
             // saat tombol di klik maka akan kembali ke page sebelumnya
-            binding.detailkembali.setOnClickListener{ onBackPressed() }
+            binding.detailkembali.setOnClickListener {
+                onBackPressed()
+            }
         }
     }
 }
