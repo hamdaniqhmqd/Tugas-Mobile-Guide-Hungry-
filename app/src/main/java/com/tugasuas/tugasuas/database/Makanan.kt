@@ -37,7 +37,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.papeda, // masukan nama gambar
             "Papeda", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "24.00", // waktu
+            "+- 1 jam 30 menit", // waktu
             listOf(
                 "250 gr tepung sagu",
                 "Air secukupnya",
@@ -78,7 +78,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.tumis, // masukan nama gambar
             "Tumis Kangkung", // nama makanan
             JenisMakanan.SAYUR, // jenis makanan
-            "24.00", // waktu
+            "+-20 menit", // waktu
             listOf(
                 "Satu ikan kangkung yang telah dibersihkan",
                 "2 siung bawang merah",
@@ -102,7 +102,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.asem, // masukan nama gambar
             "Sayur Asem", // nama makanan
             JenisMakanan.SAYUR, // jenis makanan
-            "24.00", // waktu
+            "+- 40 menit", // waktu
             listOf(
                 "1 buah jagung manis, potong-potong",
                 "100 g melinjo muda",
@@ -139,7 +139,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.ayamgoreng, // masukan nama gambar
             "Ayam Goreng", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "24.00", // waktu
+            "+- 40 menit", // waktu
             listOf(
                 "500 gram ayam broiler/pedaging (5 potong)",
                 "250 ml air",
@@ -170,7 +170,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.cumigoreng, // masukan nama gambar
             "Cumi Goreng", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "24.00", // waktu
+            "+- 25 menit", // waktu
             listOf(
                 "1/2 kg cumi",
                 "10 sendok tepung terigu",
@@ -201,7 +201,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.bebekgoreng, // masukan nama gambar
             "Bebek Goreng", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "24.00", // waktu
+            "+- 1 jam", // waktu
             listOf(
                 "1 ekor bebek, potong²",
                 "400-500 ml air",
@@ -233,7 +233,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.nastar, // masukan nama gambar
             "Nastar", // nama makanan
             JenisMakanan.KUE, // jenis makanan
-            "24.00", // waktu
+            "+-2 jam", // waktu
             listOf(
                 "200 gram Blueband",
                 "175 Gram room butter",
@@ -260,7 +260,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.donat, // masukan nama gambar
             "Donat Gula", // nama makanan
             JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu
+            "+- 2 jam", // waktu
             listOf(
                 "200 gr kentang (dikukus buang kulitnya)",
                 "500 gr tepung terigu",
@@ -292,7 +292,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.putri, // masukan nama gambar
             "Putri Salju", // nama makanan
             JenisMakanan.KUE, // jenis makanan
-            "24.00", // waktu
+            "+- 2 jam 10 menit", // waktu
             listOf(
                 "250 gr tepung terigu",
                 "50 gr tepung maizena",
@@ -317,7 +317,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.oyen, // masukan nama gambar
             "Es Oyen", // nama makanan
             JenisMakanan.MINUMAN, // jenis makanan
-            "24.00", // waktu
+            "+- 30 menit", // waktu
             listOf(
                 "2 bungkus sagu mutiara",
                 "1 buah alpukat matang potongan buah nangka secukupnya",
@@ -343,7 +343,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.tahu, // masukan nama gambar
             "Tahu Walik", // nama makanan
             JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu
+            "+- 50 menit", // waktu
             listOf(
                 "10 buah Tahu pong",
                 "150 gr Tepung tapioka",
@@ -376,7 +376,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.tempe, // masukan nama gambar
             "Tempe Goreng", // nama makanan
             JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu
+            "+- 15 menit", // waktu
             listOf(
                 "1/2 papan tempe",
                 "1/4 sdt Bubuk merica",
@@ -400,7 +400,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.nasigoreng, // masukan nama gambar
             "Nasi Goreng", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "24.00", // waktu
+            "+- 20 menit", // waktu
             listOf(
                 "1 piring Nasi putih",
                 "secukupnya Campuran sayuran,kacang,wortel, dan daging udang,terserah selera masing-masing",
@@ -421,7 +421,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.omeltte, // masukan nama gambar
             "Omelette", // nama makanan
             JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu
+            "+- 15 menit", // waktu
             listOf(
                 "2 BTR telur",
                 "3 siung bawang merah",
@@ -446,7 +446,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.telurdadar, // masukan nama gambar
             "Telur Dadar Campur", // nama makanan
             JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu
+            "+- 10 menit", // waktu
             listOf(
                 "2 butir telur ayam",
                 "1 batang daun bawang, iris tipis",
@@ -466,7 +466,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.mieayam, // masukan nama gambar
             "Mie Ayam", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "24.00", // waktu
+            "+- 35 menit", // waktu
             listOf(
                 "1 pack mie telur basah siap pakai",
                 "500 gr ayam ",
@@ -515,7 +515,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.bakso, // masukan nama gambar
             "Bakso", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "24.00", // waktu
+            "+- 2 jam 30 menit", // waktu
             listOf(
                 "500 gr daging sapi",
                 "5 siung bawang merah, iris, goreng",
@@ -549,7 +549,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.rendang, // masukan nama gambar
             "Rendang", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "24.00", // waktu
+            "+- 4 jam", // waktu
             listOf(
                 "2 kilo daging padat potong-potong sesuai selera",
                 "1/4 cabe giling",
@@ -575,7 +575,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.mochi, // masukan nama gambar
             "Mochi", // nama makanan
             JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu
+            "+- 30 menit", // waktu
             listOf(
                 "Bahan kulit:  125 gr tepung ketan",
                 "135 ml air putih ",
@@ -602,7 +602,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.crepes, // masukan nama gambar
             "Crepes", // nama makanan
             JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu
+            "+- 20 menit", // waktu
             listOf(
                 "120 gr tepung beras",
                 "25 gr tep terigu",
@@ -631,7 +631,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.pie, // masukan nama gambar
             "Pie", // nama makanan
             JenisMakanan.KUE, // jenis makanan
-            "24.00", // waktu
+            "+- 1 jam 30 menit", // waktu
             listOf(
                 "250 gr Tepung Terigu",
                 "1 Sdm susu bubuk",
@@ -666,7 +666,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.pukis, // masukan nama gambar
             "Pukis", // nama makanan
             JenisMakanan.KUE, // jenis makanan
-            "24.00", // waktu
+            "+- 2 jam", // waktu
             listOf(
                 "500 grm Tepung terigu",
                 "600 ml santan",
@@ -692,7 +692,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.pancong, // masukan nama gambar
             "Pancong", // nama makanan
             JenisMakanan.KUE, // jenis makanan
-            "24.00", // waktu
+            "+- 45 menit", // waktu
             listOf(
                 "500 gr Tepung terigu protein tinggi",
                 "100 gr gula",
@@ -722,7 +722,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.kebab, // masukan nama gambar
             "Kebab", // nama makanan
             JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu
+            "+- 1 jam", // waktu
             listOf(
                 "150 gr tepung terigu",
                 "1/2 sdt baking powder",
@@ -752,7 +752,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.doger, // masukan nama gambar
             "Es Doger", // nama makanan
             JenisMakanan.MINUMAN, // jenis makanan
-            "24.00", // waktu
+            "+- 1 jam", // waktu
             listOf(
                 "200 gram kelapa muda",
                 "2.500 gram es serut",
@@ -786,7 +786,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.dawet, // masukan nama gambar
             "Es Dawet", // nama makanan
             JenisMakanan.MINUMAN, // jenis makanan
-            "24.00", // waktu
+            "+- 1 jam 20 menit", // waktu
             listOf(
                 "100 gram tepung beras",
                 "4 sdm tepung tapioka",
