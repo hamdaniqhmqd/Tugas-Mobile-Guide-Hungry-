@@ -314,7 +314,7 @@ fun DataMakanan(): MutableList<Makanan> {
             JenisMakanan.MINUMAN, // jenis makanan
             "24.00", // waktu
             listOf("100 gram tepung beras","4 sdm tepung tapioka","500 ml air","2 lembar daun pandan","Bahan juruh/gula cair:200 gram gula merah","500 ml air","Santan:300 ml air","65 ml santan instan"), // bahan
-            listOf("Masak tepung beras, tapioka, dan air pandan sampai matang dan meletup-letup.","Angkat dan dinginkan. Cetak dawet dengan saringan dan siapkan air es di bawahnya.","Masak gula merah dan air sampai mendidih. Masak santan."," Campurkan gula, santan, dan dawet. Beri es batu agar segar.","Sajikan."), // langkah - langkah
+            listOf("Masak tepung beras, tapioka, dan air pandan sampai matang dan meletup-letup.","Angkat dan dinginkan.","Cetak dawet dengan saringan dan siapkan air es di bawahnya.","Masak gula merah dan air sampai mendidih. Masak santan."," Campurkan gula, santan, dan dawet. Beri es batu agar segar.","Sajikan."), // langkah - langkah
         )
     )
     return data // untuk mengembalikan atau mengeluarkan data

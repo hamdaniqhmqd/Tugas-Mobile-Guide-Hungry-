@@ -89,7 +89,7 @@ class HomeFragment : Fragment() {
         // jika data hasil filter kosong atau data yang di cari tidak ada,
         // tampilkan pesan, jika tidak kosong tampilkan data sesuai pencarian
         if (filteredList.isEmpty()) {
-            Toast.makeText(context, "Data tidak ditemukan", Toast.LENGTH_SHORT).show()
+            (binding.ViewDataMakanan.adapter as? homeAdapter)?.setFilteredList(emptyList())
         } else {
             (binding.ViewDataMakanan.adapter as? homeAdapter)?.setFilteredList(filteredList)
         }
