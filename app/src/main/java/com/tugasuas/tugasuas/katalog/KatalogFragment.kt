@@ -13,30 +13,40 @@ import com.tugasuas.tugasuas.database.DataMakanan
 import com.tugasuas.tugasuas.detail_data.detail_data
 
 class KatalogFragment : Fragment() {
+    // Vvariabel untuk menyimpan binding yang dapat null
     private var _binding: FragmentKatalogBinding? = null
+    // Ggetter untuk binding yang tidak boleh bernilai null,
+    // menggunakan _binding dengan not-null assertion
     private val binding get() = _binding!!
+
+    // untuk mengatur dan menampilkan tampilan ui dari home fragment
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         _binding = FragmentKatalogBinding.inflate(inflater, container, false)
         return binding.root
     }
 
+    // ketika tampilan UI dari fragment dihancurkan
     override fun onDestroyView() {
         super.onDestroyView()
+        // binding menjadi null untuk menghindari memory leaks
         _binding = null
     }
 
+    // metode yang dipanggil setelah tampilan UI telah dibuat
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // untuk menampilkan data sesuai dengan jenis datanya
         val makanan = DataMakanan()
         // jenis makananan ringan
-        val makananRingan = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MAKANAN_RINGAN }.take(5))
-        binding.rvMakananRingan.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val makananRingan = katalogAdapter(makanan.filter {
+            it.jenis == JenisMakanan.MAKANAN_RINGAN
+        }.take(5))
+        binding.rvMakananRingan.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMakananRingan.adapter = makananRingan
         // jika item makanan ringan di klik maka akan di direct ke tampilan detail data
         makananRingan.onItemClick = { makanan ->

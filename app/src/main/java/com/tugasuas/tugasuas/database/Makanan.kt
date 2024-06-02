@@ -11,11 +11,13 @@ enum class JenisMakanan(val displayName: String) {
     SAYUR("Sayur"),
     MINUMAN("Minuman");
 
+    // untuk menampilkan value berupa string dari enum class jenisMakanan
     override fun toString(): String {
         return displayName
     }
 }
 
+// data class makanan
 data class Makanan(
     val gambar: Int,
     val judul: String,
@@ -25,6 +27,7 @@ data class Makanan(
     val langkah: List<String>
 ) : Serializable
 
+// untuk merubah dan menambahkan isi dari data makanan
 fun DataMakanan(): MutableList<Makanan> {
     val data = mutableListOf<Makanan>()
     // per data
@@ -38,52 +41,8 @@ fun DataMakanan(): MutableList<Makanan> {
             listOf("Potong daging", "Masak bumbu"), // langkah - langkah
         )
     )
-    // per data
-    data.add(
-        Makanan(
-            R.drawable.rendang, // masukan nama gambar
-            "Rendang", // nama makanan
-            JenisMakanan.MAKANAN_RINGAN, // jenis makanan
-            "24.00", // waktu memasak makanan
-            listOf("Daging sapi", "Bumbu rendang"), // bahan
-            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
-        )
-    )
-    // per data
-    data.add(
-        Makanan(
-            R.drawable.rendang, // masukan nama gambar
-            "Rendang", // nama makanan
-            JenisMakanan.MINUMAN, // jenis makanan
-            "24.00", // waktu memasak makanan
-            listOf("Daging sapi", "Bumbu rendang"), // bahan
-            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
-        )
-    )
-    // per data
-    data.add(
-        Makanan(
-            R.drawable.rendang, // masukan nama gambar
-            "Rendang", // nama makanan
-            JenisMakanan.SAYUR, // jenis makanan
-            "24.00", // waktu memasak makanan
-            listOf("Daging sapi", "Bumbu rendang"), // bahan
-            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
-        )
-    )
-    // per data
-    data.add(
-        Makanan(
-            R.drawable.rendang, // masukan nama gambar
-            "Rendang", // nama makanan
-            JenisMakanan.KUE, // jenis makanan
-            "24.00", // waktu memasak makanan
-            listOf("Daging sapi", "Bumbu rendang"), // bahan
-            listOf("Potong daging", "Masak bumbu"), // langkah - langkah
-        )
-    )
     // Tambahkan data makanan lainnya di sini
-    return data
+    return data // untuk mengembalikan atau mengeluarkan data
 }
 
 

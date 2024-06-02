@@ -21,22 +21,21 @@ class detail_data : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        // value makanan yang mengambil data hasil intent homeFragment atau katalogFragment
         val makanan = intent.getSerializableExtra("Makanan") as? Makanan
-        if (makanan != null) {
-            binding.detailGambar.setImageResource(makanan.gambar)
-            binding.deskripsiNama.text = makanan.judul
-            binding.deskripsiJenis.text = makanan.jenis.toString()
-            binding.deskripsiWaktu.text = makanan.waktu
+        if (makanan != null) { // jika value makanan tidak kosong maka kode akan di jalankan
+            binding.detailGambar.setImageResource(makanan.gambar) // untuk menampilkan gambar
+            binding.deskripsiNama.text = makanan.judul  // untuk menampilkan judul
+            binding.deskripsiJenis.text = makanan.jenis.toString() // untuk menampilkan jenis
+            binding.deskripsiWaktu.text = makanan.waktu  // untuk menampilkan waktu
             binding.deskripsiBahan.text = makanan.bahan.joinToString("\n") {
-                bahan -> "${makanan.bahan.indexOf(bahan) + 1}. $bahan"
-            }
+                // menampilkan data bahan secara urut
+                bahan -> "${makanan.bahan.indexOf(bahan) + 1}. $bahan" }
             binding.deskripsiLangkah.text = makanan.langkah.joinToString("\n") {
-                langkah -> "${makanan.langkah.indexOf(langkah) + 1}. $langkah"
-            }
-            binding.detailkembali.setOnClickListener{
-                onBackPressed()
-            }
+                // menampilkan data bahan secara urut
+                langkah -> "${makanan.langkah.indexOf(langkah) + 1}. $langkah" }
+            // saat tombol di klik maka akan kembali ke page sebelumnya
+            binding.detailkembali.setOnClickListener{ onBackPressed() }
         }
     }
 }
