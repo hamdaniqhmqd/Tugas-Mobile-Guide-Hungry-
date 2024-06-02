@@ -69,7 +69,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Tambahkan irisan batang bawang, cabai merah dan hijau, dan daun jeruk.",
                 "Siapkan piring, sajikan papeda dan ikan kuah kuning. ",
                 "Nikmati selagi hangat."
-            ),"" //langkah
+            ),"Maluku" //langkah
         )
     )
 
