@@ -11,31 +11,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Guide Hungry"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            tools:ignore="MissingConstraints" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/gambarAtas"
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="250dp"
+            android:paddingHorizontal="15dp"
             android:background="@drawable/kotakwarna"
             android:translationZ="10dp"
             tools:ignore="MissingConstraints">
 
             <TextView
+                android:id="@+id/title_about"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Guide Hungry"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:textSize="30sp"
+                android:textSize="32sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline3" />
@@ -43,29 +36,29 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="51dp"
-                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:textAlignment="gravity"
                 android:text="Aplikasi inovatif ini dirancang untuk menjadi teman setia Anda dalam perjalanan kuliner, memberikan pengalaman yang menyenangkan dan memuaskan. Dengan antarmuka yang intuitif dan kaya fitur, aplikasi ini memungkinkan pengguna untuk menemukan berbagai resep lezat dari seluruh dunia. Temukan inspirasi baru setiap harinya dari aplikasi ini."
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline3" />
+                app:layout_constraintTop_toBottomOf="@+id/title_about" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="16dp" />
+                app:layout_constraintGuide_begin="20dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/gambarBawah"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:layout_marginTop="170dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="210dp"
             android:background="@drawable/kotakcoklat"
             android:translationY="5dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -75,10 +68,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="60dp"
                 android:text="Contact Us"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -108,6 +101,7 @@
                 app:layout_constraintStart_toEndOf="@id/instagramImageView"
                 app:layout_constraintTop_toBottomOf="@id/guideline" />
 
+            <!-- Add Telegram ImageView -->
             <ImageView
                 android:id="@+id/telegramImageView"
                 android:layout_width="40dp"
@@ -123,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_begin="142dp" />
+                app:layout_constraintGuide_begin="110dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -131,10 +125,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@color/white"
+            android:paddingHorizontal="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gambarBawah"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp">
+            tools:ignore="MissingConstraints">
 
             <TextView
                 android:id="@+id/title"
@@ -143,7 +137,7 @@
                 android:text="Create By :"
                 android:textColor="@color/black"
                 android:layout_marginTop="20dp"
-                android:textSize="30sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -152,10 +146,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/anggota"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:paddingHorizontal="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title">
 
                 <LinearLayout
@@ -184,10 +178,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="6dp"
                         android:text="Ahmad"
-                        android:paddingTop="20dp"
-                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textAlignment="gravity"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -219,10 +212,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="6dp"
-                        android:paddingTop="20dp"
                         android:text="Annisya"
-                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textAlignment="gravity"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -232,9 +224,9 @@
                     android:id="@+id/anggota_tiga"
                     android:layout_width="180dp"
                     android:layout_height="70dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/card_list_data"
                     android:orientation="horizontal"
-                    android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="@+id/anggota"
                     app:layout_constraintTop_toBottomOf="@+id/anggota_satu"
                     tools:ignore="MissingConstraints">
@@ -255,10 +247,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="6dp"
                         android:text="Dirajati"
-                        android:paddingTop="20dp"
-                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textAlignment="gravity"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -268,9 +259,9 @@
                     android:id="@+id/anggota_empat"
                     android:layout_width="180dp"
                     android:layout_height="70dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/card_list_data"
                     android:orientation="horizontal"
-                    android:layout_marginTop="20dp"
                     app:layout_constraintEnd_toEndOf="@+id/anggota"
                     app:layout_constraintTop_toBottomOf="@+id/anggota_dua"
                     tools:ignore="MissingConstraints">
@@ -291,10 +282,9 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginBottom="6dp"
                         android:text="Fadhilah"
-                        android:paddingTop="20dp"
-                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textAlignment="gravity"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
