@@ -78,7 +78,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.tumis, // masukan nama gambar
             "Tumis Kangkung", // nama makanan
             JenisMakanan.SAYUR, // jenis makanan
-            "+-20 menit", // waktu
+            "+- 20 menit", // waktu
             listOf(
                 "Satu ikan kangkung yang telah dibersihkan",
                 "2 siung bawang merah",
@@ -549,7 +549,7 @@ fun DataMakanan(): MutableList<Makanan> {
             R.drawable.rendang, // masukan nama gambar
             "Rendang", // nama makanan
             JenisMakanan.MAKANAN_BERAT, // jenis makanan
-            "+- 4 jam", // waktu
+            "+- 4 jam 30 menit", // waktu
             listOf(
                 "2 kilo daging padat potong-potong sesuai selera",
                 "1/4 cabe giling",
