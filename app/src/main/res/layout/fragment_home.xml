@@ -6,65 +6,118 @@
 
     </data>
 
-    <FrameLayout
+    <ScrollView
         android:id="@+id/FrameHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white_smooth"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
         tools:context="com.tugasuas.tugasuas.home.HomeFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/wadah"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="@color/white_smooth">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/garis_kiri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintGuide_begin="10dp"
-                android:orientation="vertical"/>
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="10dp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/garis_kanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintGuide_end="10dp"
-                android:orientation="vertical"/>
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="10dp" />
 
             <SearchView
                 android:id="@+id/inputPencarian"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/card_pencarian"
                 android:closeIcon="@drawable/icon_close"
                 android:iconifiedByDefault="false"
-                android:queryHint="Cari sekarang ..."
-                android:layout_marginTop="10dp"
-                android:textSize="14sp"
                 android:inputType="text"
+                android:queryHint="Cari sekarang ..."
+                android:textSize="14sp"
                 app:layout_constraintEnd_toStartOf="@id/garis_kanan"
                 app:layout_constraintStart_toEndOf="@id/garis_kiri"
                 app:layout_constraintTop_toTopOf="@id/wadah"
                 tools:ignore="MissingConstraints" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ViewDataMakanan"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+
+            <ViewFlipper
+                android:id="@+id/image_banner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:flipInterval="4000"
+                android:autoStart="true"
+                android:inAnimation="@anim/nav_default_enter_anim"
+                android:outAnimation="@anim/nav_default_exit_anim"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/inputPencarian"
-                app:layout_constraintStart_toEndOf="@+id/garis_kiri"
-                app:layout_constraintEnd_toStartOf="@id/garis_kanan"
+                tools:ignore="MissingConstraints">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="16dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profilefadilah" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="16dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profileanis" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="16dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profileahmad" />
+                </androidx.cardview.widget.CardView>
+            </ViewFlipper>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ViewDataMakanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="10dp"
                 android:scrollbars="vertical"
+                android:nestedScrollingEnabled="true"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/garis_kanan"
+                app:layout_constraintStart_toEndOf="@+id/garis_kiri"
+                app:layout_constraintTop_toBottomOf="@+id/image_banner"
                 app:spanCount="2"
-                android:paddingHorizontal="0dp"
                 tools:ignore="MissingConstraints"
                 tools:listitem="@layout/data_makanan" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </FrameLayout>
+    </ScrollView>
 </layout>
 

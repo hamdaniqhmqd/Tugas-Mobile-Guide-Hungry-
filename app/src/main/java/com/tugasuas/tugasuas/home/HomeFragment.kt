@@ -38,7 +38,6 @@ class HomeFragment : Fragment() {
         // binding menjadi null untuk menghindari memory leaks
         _binding = null
     }
-
     // metode yang dipanggil setelah tampilan UI telah dibuat
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

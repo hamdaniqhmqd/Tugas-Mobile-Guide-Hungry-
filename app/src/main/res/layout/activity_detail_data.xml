@@ -89,6 +89,15 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
+                <TextView
+                    android:id="@+id/deskripsi_asal"
+                    android:textColor="@color/black"
+                    android:text="Asal"
+                    android:textSize="16sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
                 <LinearLayout
                     android:id="@+id/Deskripsi_bahan"
                     android:layout_width="match_parent"

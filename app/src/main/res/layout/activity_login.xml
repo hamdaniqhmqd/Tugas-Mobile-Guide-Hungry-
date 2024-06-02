@@ -28,6 +28,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/black_transparan"
             tools:ignore="MissingConstraints" />
 
         <!-- Name TextView -->
@@ -60,7 +61,7 @@
             android:id="@+id/wadah_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="110dp"
+            android:layout_marginBottom="160dp"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="MissingConstraints">
             <!-- Username EditText -->
@@ -101,13 +102,17 @@
                 app:layout_constraintTop_toBottomOf="@id/usernameEditText" />
 
             <!-- Login Button -->
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/loginButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="25dp"
-                android:background="#3F51B5"
+                android:paddingVertical="12dp"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/white"
+                android:textAlignment="center"
                 android:text="@string/login_button_text"
+                app:cornerRadius="8dp"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

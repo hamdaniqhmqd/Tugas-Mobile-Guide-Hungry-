@@ -29,6 +29,7 @@ class detail_data : AppCompatActivity() {
             binding.deskripsiNama.text = makanan.judul  // untuk menampilkan judul
             binding.deskripsiJenis.text = makanan.jenis.toString() // untuk menampilkan jenis
             binding.deskripsiWaktu.text = makanan.waktu  // untuk menampilkan waktu
+            binding.deskripsiAsal.text = makanan.asal  // untuk menampilkan asal
             binding.deskripsiBahan.text = makanan.bahan.joinToString("\n") {
                 // menampilkan data bahan secara urut
                     bahan ->
