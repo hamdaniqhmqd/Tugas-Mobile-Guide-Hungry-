@@ -8,8 +8,8 @@
         <corners
             android:topLeftRadius="0dp"
             android:topRightRadius="0dp"
-            android:bottomLeftRadius="65dp"
-            android:bottomRightRadius="65dp"/> <!-- Ganti dengan radius yang diinginkan -->
+            android:bottomLeftRadius="45dp"
+            android:bottomRightRadius="45dp"/> <!-- Ganti dengan radius yang diinginkan -->
 
          <!-- Ganti dengan warna yang diinginkan -->
     </shape>
