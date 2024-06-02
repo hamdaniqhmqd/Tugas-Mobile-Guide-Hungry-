@@ -69,7 +69,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Tambahkan irisan batang bawang, cabai merah dan hijau, dan daun jeruk.",
                 "Siapkan piring, sajikan papeda dan ikan kuah kuning. ",
                 "Nikmati selagi hangat."
-            ),"" //langkah
+            ),"Maluku" //langkah
         )
     )
 
@@ -93,7 +93,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Aduk hingga sayur kangkung layu, dan masukkan air panas secukupnya.",
                 "Tambahkan gula, garam dan kaldu bubuk.",
                 "Cicip rasa, jika telah pas dan sesuai selera, resep tumis kangkung satu ini siap dihidangkan."
-            ),"" //langkah
+            ),"Jawa Barat" //langkah
         )
     )
 
@@ -129,7 +129,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Tambahkan labu siam dan kacang panjang. Rebus hingga lunak.",
                 "Masukkan daun melinjo dan air asam muda, didihkan kembali.",
                 "Angkat dan sajikan hangat"
-            ),"" // langkah - langkah
+            ),"Jawa Barat" // langkah - langkah
 
         )
     )
@@ -161,7 +161,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Masukkan ayam, aduk dan tambahkan air, garam dan kaldu bubuk, ungkep sesekali balik hingga bumbu meresap dan asat.",
                 "Angkat ayam, goreng hingga tingkat kering yang diinginkan, angkat, tiriskan.",
                 "Sajikan dengan sambal, nikmat"
-            ),"" // langkah - langkah
+            ),"-" // langkah - langkah
         )
     )
 
@@ -192,7 +192,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Sesudah diaduk rata ambil cumi satu persatu dan masukkan ke dalam tepung kering, balur dengan tepung, setelah itu panaskan minyak, masukan cumi dan goreng sampai coklat keemasan.",
                 "Setelah cumi matang,angkat dan tiriskan.",
                 "Dan siap disajikan."
-            ),"" // langkah - langkah
+            ),"Sulawesi Barat" // langkah - langkah
         )
     )
 
@@ -224,7 +224,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Tambahkan air, aduk rata dan tutup pancinya. Masak bebek pake api sedang. Masak sekitar 45 - 60 menit sampai air menyusut dan bumbu meresap, koreksi rasa. ",
                 "Goreng sampai matang. Siapkan sambal kesukaan",
                 "bebek goreng siap disajikan"
-            ),"" // langkah - langkah
+            ),"Jawa Tengah" // langkah - langkah
         )
     )
 
@@ -251,7 +251,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Setelah itu masukan tepung sedikit demi sedikit sampai dirasa adonan pas",
                 "Jika dirasa sudah pas bisa langsung diisi dengan selai nanas",
                 "Panggang kurang lebih 20 menit lalu keluarkan,tunggu hingga dingin lalu olesi telur yg sudah dicampur minyak tadi.panggang sampai dirasa matang"
-            ),"" // langkah - langkah
+            ),"Belanda" // langkah - langkah
         )
     )
 
@@ -283,7 +283,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 " Setelah semuanya di timbang, bulat bulatkan adonan sampai mulus, kemudian tutup dengan lap bersih dan biarkan sampai mengembang, untuk di goreng",
                 "Setelah 15 menit di kembangkan, kita siapkan wajan berisi minyak panas, goreng adonan donat sampai kuning kecoklatan",
                 "Taburi gula halus"
-            ),"" // langkah - langkah
+            ),"-" // langkah - langkah
         )
     )
 
@@ -308,7 +308,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Jika adonan sudah kalis kemudian pipihkan di atas loyang dan bentuk sesuai selera. Setelah itu taruh adonan di atas loyang yg sudah di oles mentega",
                 " Jika sudah terbentuk semua lalu masukkan loyang yg berisi adonan putri salju ke dalam oven, oven kurleb 40 menit. Jika sudah berwarna kekuningan lalu angkat dan dinginkan",
                 "Kemudian ambil putri salju tadi lalu campurkan menggunakan gula saju atau gula halus lalu aduk hingga rata"
-            ),"" // langkah - langkah
+            ),"Jerman" // langkah - langkah
         )
     )
 
@@ -334,7 +334,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Belah alpukat.ambil bijinya, kemudian siapkan es batu di mangkok",
                 "Racik diatas es batu yg di mangkok. 1 cintung sayur air gula, kelapa yg sdh di sisir,alpukat, potongan buah nangka dan krimer sesuai selera.",
                 "EsOyen siap dinikmati"
-            ),"" // langkah - langkah
+            ),"Bandung" // langkah - langkah
         )
     )
 
@@ -367,7 +367,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Masukkan adonan ke dalam tahu satu per satu, jangan terlalu banyak agar bisa matang sempurna saat digoreng",
                 "Setelah selesai, kemudian panaskan minyak di minyak panas api kecil ke sedang agar tidak gosong. Minyak harus banyak sampai tahu terendam minyak",
                 " Goreng tahu hingga kecoklatan dan krispi"
-            ),"" // langkah - langkah
+            ),"Banyuwangi" // langkah - langkah
         )
     )
 
@@ -391,7 +391,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Simpan di kulkas selama 10-15 menit",
                 "Goreng Tempe hingga kecoklatan",
                 "Tempe siap dinikmati"
-            ),"" // langkah - langkah
+            ),"Jawa Tengah" // langkah - langkah
         )
     )
 
@@ -412,7 +412,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Panaskan minyak, kocok telur dengan campuran irisan bawang merah dan digoreng hingga matang,terserah telur mau dicampur diaduk atau dipisah dengan nasi goreng.",
                 " Kalau mau dipisahkan telurnya,panaskan minyak lagi, gorengkan nasinya dengan campuran sayuran dan daging dan ditambahkan bumbu nasi goreng,sesuai selera. hingga kelihatan menjadi kecoklatan,setelah itu nasi gorengnya diangkat dituangkan kepiring.",
                 "Sesudah itu telur yg sudah digoreng diletakan diatas nasi gorengnya dan siap disajikan."
-            ),"" // langkah - langkah
+            ),"Tionghoa" // langkah - langkah
         )
     )
 
@@ -437,7 +437,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 " Lelehkan margarin dalam teflon tuang telur dadar, masak dengan api kecil hingga satu sisinya matang.",
                 "Setelah satu sisi dadar berwarna golden brown, balikkan telur dadar masak kembali hingga matang.",
                 "Omelette siap disajikan"
-            ),"" // langkah - langkah
+            ),"Perancis" // langkah - langkah
         )
     )
 
@@ -457,7 +457,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Siapkan 2 butir telur ayam dalam wadah. beri kaldu bubuk.",
                 "Kocok telur dan beri daun bawang",
                 "Goreng dalam minyak panas, api sedang sampai matang. jangan lupa dibalik supaya matang merata. siap disajikan."
-            ),"" // langkah - langkah
+            ),"Iran" // langkah - langkah
         )
     )
 
@@ -506,7 +506,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Beri topping ayam, bakso, sawi, kuah kaldu, pangsit goreng",
                 "Taburkan daun bawang dan bawang goreng",
                 "Sajikan mie dengan sambal, saos dan kecap sesuai selera"
-            ),"" // langkah - langkah
+            ),"China" // langkah - langkah
         )
     )
 
@@ -540,7 +540,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 " Cetak bulat-bulat adonan, lalu masukkan ke dalam air panas rebusan tulang tadi. Jika baso mengapung segera angkat dan masukkan ke dalam air es. Tiriskan.",
                 "Kuah: Goreng kemiri, bawang putih lalu blender dan goreng dengan sedikit minyak hingga kecoklatan. Masukkan ke dalam air rebusan tulang tadi.",
                 "Masukkan bakso dan sajikan bersama pelengkap lainnya."
-            ),"" // langkah - langkah
+            ),"Tiongkok" // langkah - langkah
         )
     )
 
@@ -566,7 +566,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Kalau sudah tanak Masukkan daging bersama cabe setannya",
                 "Masak dengan api kecil sampai berwarna coklat atau hitam",
                 "rendang siap disajikan"
-            ),"" // langkah - langkah
+            ),"Minangkabau" // langkah - langkah
         )
     )
 
@@ -593,7 +593,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Ambil kurang lebih 1 sendok adonan, beri bahan isian, lalu tutup dan rapatkan.",
                 "Kemudian gulingkan ke bahan pelapis. Lakukan hingga adonan habis.",
                 "Siap dinikmati."
-            ),"" // langkah - langkah
+            ),"Sunda" // langkah - langkah
         )
     )
 
@@ -622,7 +622,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "wajannya dan masak di api kompor hingga permukaannya coklat. Beri topping atau isian.",
                 "Angkat crepes dan lakukan hingga selesai. Saat baru matang crepes masih lembek. Setelah hangat akan garing atau crispy.",
                 "Crepes siap dinikmati"
-            ),"" // langkah - langkah
+            ),"Perancis" // langkah - langkah
         )
     )
 
@@ -657,7 +657,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Tuang isian susu ke blm kulit pie satu persatu.",
                 "Lalu oven dgn suhu 160°c Api atas bawah selama 30 sampe 40 menit tergantung oven masing2",
                 "Jika sudah, Pie siap dinikmati."
-            ),"" // langkah - langkah
+            ),"Bali" // langkah - langkah
         )
     )
 
@@ -683,7 +683,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 " Siapkan bahan2, rebus santan dengan garam beri daun pandan, aduk2 terus jgn sampai santan pecah rebus dengan api kecil hingga mendidih biarkan suam2 kuku.",
                 "Mixer telur dan gula hingga gula larut, lalu masukkan tepung terigu sedikit demi sedikit berbarengan dengan santan.",
                 "Masukkan susu kental manis mixer lagi sampai rata lalu masukkan margarin cair aduk2 hingga rata terakhir masukkan ragi instan, pastikan ragi instan masih aktif aduk rata lalu tutup dengan serbet bersih istirahat kan 1jam"
-            ),"" // langkah - langkah
+            ),"Banyumas" // langkah - langkah
         )
     )
 
@@ -713,7 +713,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Saat cetakan sudah panas, masukkan adonan yang telah dibuat, dan masak sampai adonan setengah matang (kira-kira 2 menit).",
                 "Setelah 2 menit pancong bisa diangkat dan diberi topping Mesis coklat.",
                 "Pancong lumer siap di hidangkan."
-            ),"" // langkah - langkah
+            ),"Jakarta" // langkah - langkah
         )
     )
 
@@ -743,7 +743,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Tumis burger beef dan sosis.",
                 "Tata kulit kebab, burger beef, tomat dan sosis, lalu tambahkan mayonais, saos tomat, saos keju lalu gulung",
                 "Kebab siap di sajikan."
-            ),"" // langkah - langkah
+            ),"Turki" // langkah - langkah
         )
     )
 
@@ -777,7 +777,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Masukkan kelapa muda, sagu mutiara, tape ketan hitam, buah dan tape singkong ke dalam wadah.",
                 "Campurkan dan aduk dengan kental manis.",
                 "Es doger siap disajikan."
-            ),"" // langkah - langkah
+            ),"cirebon" // langkah - langkah
         )
     )
 
@@ -804,7 +804,7 @@ fun DataMakanan(): MutableList<Makanan> {
                 "Masak gula merah dan air sampai mendidih. Masak santan.",
                 " Campurkan gula, santan, dan dawet. Beri es batu agar segar.",
                 "Sajikan."
-            ),"" // langkah - langkah
+            ),"Banjarnegara" // langkah - langkah
         )
     )
     return data // untuk mengembalikan atau mengeluarkan data
