@@ -15,9 +15,9 @@ import com.tugasuas.tugasuas.detail_data.detail_data
 import java.util.Locale
 
 class HomeFragment : Fragment() {
-    // Vvariabel untuk menyimpan binding yang dapat null
+    // variabel untuk menyimpan binding yang dapat null
     private var _binding: FragmentHomeBinding? = null
-    // Ggetter untuk binding yang tidak boleh bernilai null,
+    // getter untuk binding yang tidak boleh bernilai null,
     // menggunakan _binding dengan not-null assertion
     private val binding get() = _binding!!
     // membuat variabel HomeAdapter untuk memanggil homeAdapter
