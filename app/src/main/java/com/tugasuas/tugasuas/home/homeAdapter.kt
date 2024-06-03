@@ -14,7 +14,7 @@ import com.ahmad.tugasuas.R
 class homeAdapter(private var dataMakanan: List<Makanan>) :
     RecyclerView.Adapter<homeAdapter.MakananViewHolder>() {
     // variabel untuk mengambil nilai makanan
-    // dan tidak mengembalikan nilai apapun yang bisa berniali null
+    // dan tidak mengembalikan nilai apapun atau bisa berniali null
     var onItemClick: ((Makanan) -> Unit)? = null
 
     // untuk mengidentifikasi data apa saja yang akan di tampilkan di recyclerView
