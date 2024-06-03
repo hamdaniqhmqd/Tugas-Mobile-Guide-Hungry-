@@ -13,8 +13,11 @@ import com.ahmad.tugasuas.R
 
 class homeAdapter(private var dataMakanan: List<Makanan>) :
     RecyclerView.Adapter<homeAdapter.MakananViewHolder>() {
-    // variabel untuk mengambil nilai makanan
-    // dan tidak mengembalikan nilai apapun atau bisa berniali null
+    // sebuah lambda function yang digunakan sebagai callback untuk menangani event klik
+    // pada item dalam daftar makanan. Lambda function ini menerima satu parameter bertipe Makanan
+    // dan tidak mengembalikan nilai. Dengan menginisialisasi onItemClick dengan lambda kosong,
+    // Anda menghindari perlu memeriksa null sebelum memanggilnya, sehingga membuat kode lebih bersih dan
+    // lebih mudah di-maintain.
     var onItemClick: ((Makanan) -> Unit) = {}
 
     // untuk mengidentifikasi data apa saja yang akan di tampilkan di recyclerView
