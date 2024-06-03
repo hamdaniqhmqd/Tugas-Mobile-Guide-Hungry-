@@ -16,7 +16,8 @@ import com.tugasuas.tugasuas.home.HomeFragment
 
 class detail_data : AppCompatActivity() {
     private lateinit var binding: ActivityDetailDataBinding
-
+    // untuk menonaktifkan peringatan lint (lint warning)
+    // yang diberikan oleh alat analisis statis lint
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

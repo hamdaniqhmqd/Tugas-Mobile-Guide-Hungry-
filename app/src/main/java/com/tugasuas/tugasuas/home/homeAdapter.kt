@@ -15,7 +15,7 @@ class homeAdapter(private var dataMakanan: List<Makanan>) :
     RecyclerView.Adapter<homeAdapter.MakananViewHolder>() {
     // variabel untuk mengambil nilai makanan
     // dan tidak mengembalikan nilai apapun atau bisa berniali null
-    var onItemClick: ((Makanan) -> Unit)? = null
+    var onItemClick: ((Makanan) -> Unit) = {}
 
     // untuk mengidentifikasi data apa saja yang akan di tampilkan di recyclerView
     class MakananViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
@@ -52,13 +52,15 @@ class homeAdapter(private var dataMakanan: List<Makanan>) :
         // jika item dari recyclerView di click makan
         // akan mengeksekusi kode didalamnya
         holder.itemView.setOnClickListener {
-            onItemClick?.invoke(makanan)
+            onItemClick.invoke(makanan)
         }
     }
 
+    // untuk menonaktifkan peringatan lint (lint warning) tertentu di dalam kode Android
+    // yang berkaitan dengan penggunaan metode notifyDataSetChanged() pada adapter.
+    @SuppressLint("NotifyDataSetChanged")
     // untuk memperbarui data yang ditampilkan oleh adapter
     // dengan data yang sudah di filter
-    @SuppressLint("NotifyDataSetChanged")
     fun setFilteredList(filterdata: List<Makanan>) {
         this.dataMakanan = filterdata
         notifyDataSetChanged() // fungsi untuk render ulang tampilan recyclerView

@@ -11,9 +11,12 @@ import com.ahmad.tugasuas.R
 
 class katalogAdapter(private var dataMakanan: List<Makanan>)
     : RecyclerView.Adapter<katalogAdapter.MakananViewHolder>(){
-    // variabel untuk mengambil nilai makanan
-    // dan tidak mengembalikan nilai apapun yang bisa berniali null
-    var onItemClick: ((Makanan) -> Unit)? = null
+    // sebuah lambda function yang digunakan sebagai callback untuk menangani event klik
+    // pada item dalam daftar makanan. Lambda function ini menerima satu parameter bertipe Makanan
+    // dan tidak mengembalikan nilai. Dengan menginisialisasi onItemClick dengan lambda kosong,
+    // Anda menghindari perlu memeriksa null sebelum memanggilnya, sehingga membuat kode lebih bersih dan
+    // lebih mudah di-maintain.
+    var onItemClick: ((Makanan) -> Unit) = {}
     // untuk mengidentifikasi data apa saja yang akan di tampilkan di recyclerView
     class MakananViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val ivMhs: ImageView = row.findViewById(R.id.ivGambar)
@@ -47,8 +50,9 @@ class katalogAdapter(private var dataMakanan: List<Makanan>)
 
         // jika item dari recyclerView di click makan
         // akan mengeksekusi kode didalamnya
+        // sebuah lambda atau fungsi yang bisa dieksekusi ketika suatu item di-klik
         holder.itemView.setOnClickListener {
-            onItemClick?.invoke(makanan)
+            onItemClick.invoke(makanan)
         }
     }
 }
