@@ -26,7 +26,7 @@ data class Makanan(
     val bahan: List<String>,
     val langkah: List<String>,
     val asal: String
-) : Serializable
+) : Serializable // untuk mengirim atau menerima data dari activty ke fragment
 
 // untuk merubah dan menambahkan isi dari data makanan
 fun DataMakanan(): MutableList<Makanan> {

@@ -15,12 +15,12 @@ import com.tugasuas.tugasuas.detail_data.detail_data
 import java.util.Locale
 
 class HomeFragment : Fragment() {
-    // variabel untuk menyimpan binding yang dapat null
+    // variabel untuk menyimpan layout home yang dapat bernilai null, jika tidak digunakan
     private var _binding: FragmentHomeBinding? = null
-    // getter untuk binding yang tidak boleh bernilai null,
-    // menggunakan _binding dengan not-null assertion
+    // Getter ini akan mengembalikan _binding dengan ketentuan
+    // bahwa _binding tidak boleh bernilai null ketika getter dipanggil.
     private val binding get() = _binding!!
-    // membuat variabel HomeAdapter untuk memanggil homeAdapter
+    // membuat variabel HomeAdapter yang memiliki tipe homeAdapter
     private lateinit var HomeAdapter: homeAdapter
 
     // untuk mengatur dan menampilkan tampilan ui dari home fragment
@@ -35,17 +35,13 @@ class HomeFragment : Fragment() {
     // ketika tampilan UI dari fragment dihancurkan
     override fun onDestroyView() {
         super.onDestroyView()
-        // binding menjadi null untuk menghindari memory leaks
+        // binding menjadi null untuk menghindari kebocoran memory
         _binding = null
     }
     // metode yang dipanggil setelah tampilan UI telah dibuat
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // ketika SearchView di klik maka akan membuka pencarian
-        binding.inputPencarian.setOnClickListener {
-            binding.inputPencarian.isIconified = false
-        }
-        // listener untuk perubahan teks pada SearchView
+        // listener untuk mengidentifikasi perubahan teks dan pengiriman teks pencarian
         binding.inputPencarian.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             // fun akan berjalan ketika teks pencarian disubmit dan mengembalikan nilai true
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -53,40 +49,47 @@ class HomeFragment : Fragment() {
             }
             // ketika teks pencarian berubah kode didalamnya akan di eksekusi
             override fun onQueryTextChange(kataKunci: String?): Boolean {
-                // Memanggil metode untuk memfilter data berdasarkan newText yang dimasukkan
+                // filterlist dengan parameter kataKunci dan tipe datanya dijadikan string
                 filterList(kataKunci.toString())
                 return true
             }
         })
-        // untuk mengambil data makanan() dari file Makanan.kt
+        // val makanan yang mengambil fungsi dataMakanan() dari file Makanan.kt
         val makanan = DataMakanan()
-        // untuk mengidentifikasi home adapter dengan data makanan
+        // untuk mengidentifikasi home adapter dengan parameter makanan
         HomeAdapter = homeAdapter(makanan)
 
         // untuk mengatur layout manager dan adapter untuk RecyclerView
         binding.ViewDataMakanan.layoutManager = GridLayoutManager(context, 2)
+        // menghubungkan reyclcerView dengan adapter yang mengambil data dari HomeAdapter
         binding.ViewDataMakanan.adapter = HomeAdapter
 
         // saat salah satu item pada RecyclerView
         // di klik maka akan mengeksekusi kode didalamnya
         HomeAdapter.onItemClick = {
+            // val intent yang menggunakan Intent untuk berpindah ke activty detail_data
             val intent = Intent(context, detail_data::class.java)
+            // intent tersebut juga membawa data makanan sesuai data yang di klik
             intent.putExtra("Makanan", it)
+            // memulai activty baru yang membawa intent yang sudah berisi data
             startActivity(intent)
         }
     }
 
     // untuk memfilter data berdasarkan query pencarian
     private fun filterList(query: String) {
-        // mengambil data makanan dari file makanan.kt
+        // mengambil fungsi dataMakanan dari file makanan.kt
         val data = DataMakanan()
-        // mengidentifikasi data sesuai query
+        // val filteredList yang mengfilter data sesuai query yang masuk
         val filteredList = data.filter {
+            // menjadikan data judul atau jenis (data local) menjadi huruf kecil,
+            // contains yang memeriksa parameter query yang sudah dirubah menjadi huruf kecil
+            // apakah sama, jika iya maka akan dimasukkan ke val filteredList
             it.judul.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT)) ||
             it.jenis.name.lowercase(Locale.ROOT).contains(query.lowercase(Locale.ROOT))
         }
-        // jika data hasil filter kosong atau data yang di cari tidak ada,
-        // tampilkan pesan, jika tidak kosong tampilkan data sesuai pencarian
+        // jika val filteredList kosong atau data yang di cari tidak ada, data recyclerView akan kosong
+        // jika val filteredList tidak kosong tampilkan data sesuai pencarian
         if (filteredList.isEmpty()) {
             (binding.ViewDataMakanan.adapter as? homeAdapter)?.setFilteredList(emptyList())
         } else {

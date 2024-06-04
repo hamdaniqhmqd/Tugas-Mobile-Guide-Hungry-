@@ -24,13 +24,15 @@ class detail_data : AppCompatActivity() {
         binding = ActivityDetailDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // value makanan yang mengambil data hasil intent homeFragment atau katalogFragment
-        val makanan = intent.getSerializableExtra("Makanan") as? Makanan
+        // serializabel untuk mengirim atau menerima data antara activty dan fragment
+        val makanan = intent.getSerializableExtra("Makanan") as? Makanan // casting/mengubah tipe data Makanan ke makanan
         if (makanan != null) { // jika value makanan tidak kosong maka kode akan di jalankan
             binding.detailGambar.setImageResource(makanan.gambar) // untuk menampilkan gambar
             binding.deskripsiNama.text = makanan.judul  // untuk menampilkan judul
             binding.deskripsiJenis.text = makanan.jenis.toString() // untuk menampilkan jenis
             binding.deskripsiWaktu.text = makanan.waktu  // untuk menampilkan waktu
             binding.deskripsiAsal.text = makanan.asal  // untuk menampilkan asal
+            // joinToString untuk menggabungkan elemen-elemen list ke dalam satu string
             binding.deskripsiBahan.text = makanan.bahan.joinToString("\n") {
                 // menampilkan data bahan secara urut
                     bahan ->
@@ -43,7 +45,7 @@ class detail_data : AppCompatActivity() {
             }
             // saat tombol di klik maka akan kembali ke page sebelumnya
             binding.detailkembali.setOnClickListener {
-                onBackPressed()
+                onBackPressed() // fungsi kembali ke tampilan sebelumnya
             }
         }
     }
