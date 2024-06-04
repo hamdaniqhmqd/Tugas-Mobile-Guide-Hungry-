@@ -14,6 +14,7 @@ class login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     // untuk menampung data user dan pass untuk aout login
     object Data {
+        // mapOf untuk membuat sebuah Map yang berisi pasangan kunci - nilai
         val users = mapOf(
             "ahmad" to "12345678",
             "annisya" to "12345678",
@@ -28,6 +29,7 @@ class login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // listener untuk auth login
+        // jika tombol loginButton di klik maka akan mengeksekusi data didalamnya
         binding.loginButton.setOnClickListener {
             // mengambil inputan username
             val inputUser = binding.usernameEditText.text.toString()
@@ -36,7 +38,9 @@ class login : AppCompatActivity() {
             // jika data username sama dengan data input password,
             // maka akan mengeksekusi kode yang berpindah ke main activty
             if (Data.users[inputUser] == inputPass) {
+                // val submit yang berisi Intent yang mengarah ke MainActivty
                 val submit = Intent(this, MainActivity::class.java)
+                // mengeksekusi activty baru sesuai dengan val submit
                 startActivity(submit)
             } else {
                 // jika salah maka akan menampilkan pesan

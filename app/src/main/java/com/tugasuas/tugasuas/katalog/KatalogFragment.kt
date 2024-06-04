@@ -13,11 +13,12 @@ import com.tugasuas.tugasuas.database.DataMakanan
 import com.tugasuas.tugasuas.detail_data.detail_data
 
 class KatalogFragment : Fragment() {
-    // Vvariabel untuk menyimpan binding yang dapat null
+    // variabel untuk menyimpan layout home yang
+    // dapat bernilai null, jika tidak digunakan
     private var _binding: FragmentKatalogBinding? = null
 
-    // Ggetter untuk binding yang tidak boleh bernilai null,
-    // menggunakan _binding dengan not-null assertion
+    // Getter ini akan mengembalikan _binding dengan ketentuan
+    // bahwa _binding tidak boleh bernilai null ketika getter dipanggil.
     private val binding get() = _binding!!
 
     // untuk mengatur dan menampilkan tampilan ui dari home fragment
@@ -32,7 +33,7 @@ class KatalogFragment : Fragment() {
     // ketika tampilan UI dari fragment dihancurkan
     override fun onDestroyView() {
         super.onDestroyView()
-        // binding menjadi null untuk menghindari memory leaks
+        // binding menjadi null untuk menghindari kebocoran memory
         _binding = null
     }
 
@@ -40,25 +41,31 @@ class KatalogFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // untuk menampilkan data sesuai dengan jenis datanya
+        // val makanan yang mengambil fungsi dataMakanan() dari file Makanan.kt
         val makanan = DataMakanan()
-        // jenis makananan ringan
+
+        // val makananRingan yang memanggil katalogAdaper dengan parameter makanan
         val makananRingan = katalogAdapter(makanan.filter {
+            // mencari data jenis makanan ringan
             it.jenis == JenisMakanan.MAKANAN_RINGAN
-        })
+        }.take(5))
         binding.rvMakananRingan.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMakananRingan.adapter = makananRingan
-        // jika item makanan ringan di klik maka akan di direct ke tampilan detail data
-        // untuk menetapkan aksi yang akan dilakukan saat sebuah item di klik pada objek
+        // saat salah satu item pada RecyclerView makanan ringan
+        // di klik maka akan mengeksekusi kode didalamnya
         makananRingan.onItemClick = { makanan ->
+            // val intent yang menggunakan Intent untuk berpindah ke activty detail_data
             val intent = Intent(context, detail_data::class.java)
+            // intent tersebut juga membawa data makanan sesuai data yang di klik
             intent.putExtra("Makanan", makanan)
+            // memulai activty baru yang membawa intent yang sudah berisi data
             startActivity(intent)
         }
 
         // jenis makananan berat
-        val makananBerat = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MAKANAN_BERAT })
+        val makananBerat =
+            katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MAKANAN_BERAT }.take(5))
         binding.rvMakananBerat.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMakananBerat.adapter = makananBerat
@@ -70,7 +77,7 @@ class KatalogFragment : Fragment() {
         }
 
         // jenis sayur
-        val Sayur = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.SAYUR })
+        val Sayur = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.SAYUR }.take(5))
         binding.rvMakananSayur.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMakananSayur.adapter = Sayur
@@ -82,7 +89,7 @@ class KatalogFragment : Fragment() {
         }
 
         // jenis minuman
-        val Minuman = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MINUMAN })
+        val Minuman = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.MINUMAN }.take(5))
         binding.rvMinuman.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvMinuman.adapter = Minuman
@@ -94,7 +101,7 @@ class KatalogFragment : Fragment() {
         }
 
         // jenis kui
-        val Kue = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.KUE })
+        val Kue = katalogAdapter(makanan.filter { it.jenis == JenisMakanan.KUE }.take(5))
         binding.rvKue.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvKue.adapter = Kue

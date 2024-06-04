@@ -13,8 +13,10 @@ import com.ahmad.tugasuas.R
 
 class homeAdapter(private var dataMakanan: List<Makanan>) :
     RecyclerView.Adapter<homeAdapter.MakananViewHolder>() {
-    // variabel untuk mengambil nilai makanan
-    // dan tidak mengembalikan nilai apapun atau bisa berniali null
+
+    // var onItemClick yang menerima parameter Makanan
+    // dan tidak mengembalikan nilai apapun (unit)
+    // fungsi ini tidak menjalankan perintah, karena merupakan fungsi kosong
     var onItemClick: ((Makanan) -> Unit) = {}
 
     // untuk mengidentifikasi data apa saja yang akan di tampilkan di recyclerView
@@ -31,11 +33,11 @@ class homeAdapter(private var dataMakanan: List<Makanan>) :
         val layout =
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.data_makanan, parent, false)
-        // Mengembalikan instance dari MakananViewHolder yang berisi view yang baru dibuat
+        // Mengembalikan instance dari MakananViewHolder yang berisi layout yang baru dibuat
         return MakananViewHolder(layout)
     }
 
-    // untuk membatasi jumlah data yang akan di tampilkan
+    // untuk mengatur jumlah data yang akan di tampilkan
     override fun getItemCount(): Int {
         return dataMakanan.size
     }
@@ -52,6 +54,7 @@ class homeAdapter(private var dataMakanan: List<Makanan>) :
         // jika item dari recyclerView di click makan
         // akan mengeksekusi kode didalamnya
         holder.itemView.setOnClickListener {
+            // memanggil fungsi onItemClick dengan argumen makanan
             onItemClick.invoke(makanan)
         }
     }

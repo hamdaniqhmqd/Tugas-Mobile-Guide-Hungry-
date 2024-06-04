@@ -13,15 +13,17 @@ import com.tugasuas.tugasuas.home.HomeFragment
 import com.tugasuas.tugasuas.katalog.KatalogFragment
 
 class MainActivity : AppCompatActivity() {
-    // membuat variabel binding untuk layout ActivityMain
+    // membuat variabel binding untuk layout Main Activty
     private lateinit var binding: ActivityMainBinding
-    // metode yang dipanggil saat aktivitas dibuat
+    // metode yang dipanggil saat main activty dibuat
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // inflate(layoutInflater) untuk mengonversi layout XML menjadi objek yang
+        // dapat digunakan oleh kode Kotlin
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // untuk menangani pemilihan item di BottomNavigationView
-        // sesuai dengan listener-nya
+        // sesuai dengan listener-nya, item mana yang akan terseleksi
         binding.Navigasi.setOnItemSelectedListener{item ->
             var selectedFragment: Fragment? = null
             // ketika fragment yang akan ditampilkan berdasarkan item yang dipilih
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.KatalogNavigasi -> selectedFragment = KatalogFragment()
                 R.id.AboutNavigasi -> selectedFragment = AboutUsFragment()
             }
-            // jika fragment yang dipilih tidak null,
+            // jika ada fragment yang dipilih, maka akan
             // mengganti fragment saat ini dengan fragment yang dipilih
             if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction()
@@ -39,8 +41,8 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-        // memastikan HomeFragment ditampilkan pertama kali
-        // saat activity pertama kali dibuat
+        // jika objek savedInstanceState yang digunakan untuk menyimpan aktivitas
+        // memiliki nilai sama dengan null, maka akan menampilkan fragment home
         if (savedInstanceState == null){
             binding.Navigasi.selectedItemId = R.id.HomeNavigasi
         }
