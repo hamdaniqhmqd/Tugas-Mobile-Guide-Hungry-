@@ -11,7 +11,7 @@ enum class JenisMakanan(val displayName: String) {
     SAYUR("Sayur"),
     MINUMAN("Minuman");
 
-    // untuk menampilkan value berupa string dari enum class jenisMakanan
+    // fun toString() untuk menampilkan value berupa string dari enum class jenisMakanan
     override fun toString(): String {
         return displayName
     }
