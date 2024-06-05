@@ -16,23 +16,27 @@ class AboutUsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflater untuk menjadikan layout menjadi tampilan
         val view = inflater.inflate(R.layout.fragment_about_us, container, false)
 
-        // Find ImageView elements by ID
+        // mengidentifikasi gambar instagram, whatsapp, telegram melalui id nya
         val instagramImageView: ImageView = view.findViewById(R.id.instagramImageView)
         val whatsappImageView: ImageView = view.findViewById(R.id.whatsappImageView)
         val telegramImageView: ImageView = view.findViewById(R.id.telegramImageView)
 
-        // Set click listener for Instagram ImageView
+        // jika val instagramImageView di klik maka akan mengeksekusi
         instagramImageView.setOnClickListener {
+            // instagramIntent memiliki intent ke sebuah data (ACTION_VIEW)
             val instagramIntent = Intent(Intent.ACTION_VIEW)
+            // data yang digunakan yaitu URL
             instagramIntent.data = Uri.parse("https://www.instagram.com/guidehungry?igsh=MTg0YzMwd3lheWo4Mg==")
+            // setPackage menentukan URL harus dibuka dengan aplikasi
             instagramIntent.setPackage("com.instagram.android")
             try {
+                // jika punya aplikasi
                 startActivity(instagramIntent)
             } catch (e: Exception) {
-                // Handle case where Instagram app is not installed
+                // jika tidak punya aplikasi, akan mengarah ke website
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/guidehungry?igsh=MTg0YzMwd3lheWo4Mg==")))
             }
         }
