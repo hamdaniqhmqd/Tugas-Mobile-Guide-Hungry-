@@ -11,20 +11,20 @@ import android.widget.ImageView
 import com.ahmad.tugasuas.R
 
 class AboutUsFragment : Fragment() {
-
+// untuk mengatur dan menampilkan tampilan ui dari home fragment
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Menginflate layout untuk fragmen ini
         val view = inflater.inflate(R.layout.fragment_about_us, container, false)
 
-        // Find ImageView elements by ID
+        // Menemukan elemen ImageView berdasarkan ID
         val instagramImageView: ImageView = view.findViewById(R.id.instagramImageView)
         val whatsappImageView: ImageView = view.findViewById(R.id.whatsappImageView)
         val telegramImageView: ImageView = view.findViewById(R.id.telegramImageView)
 
-        // Set click listener for Instagram ImageView
+        // Menetapkan click listener untuk Instagram ImageView
         instagramImageView.setOnClickListener {
             val instagramIntent = Intent(Intent.ACTION_VIEW)
             instagramIntent.data = Uri.parse("https://www.instagram.com/guidehungry?igsh=MTg0YzMwd3lheWo4Mg==")
@@ -32,12 +32,12 @@ class AboutUsFragment : Fragment() {
             try {
                 startActivity(instagramIntent)
             } catch (e: Exception) {
-                // Handle case where Instagram app is not installed
+                // Menangani kasus dimana aplikasi Instagram tidak terpasang
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/guidehungry?igsh=MTg0YzMwd3lheWo4Mg==")))
             }
         }
 
-        // Set click listener for WhatsApp ImageView
+        // Menetapkan click listener untuk WhatsApp ImageView
         whatsappImageView.setOnClickListener {
             val whatsappIntent = Intent(Intent.ACTION_VIEW)
             whatsappIntent.data = Uri.parse("https://wa.me/message/XC6BA6ZEUJ3FN1")
@@ -45,12 +45,12 @@ class AboutUsFragment : Fragment() {
             try {
                 startActivity(whatsappIntent)
             } catch (e: Exception) {
-                // Handle case where WhatsApp app is not installed
+                // Jika aplikasi WhatsApp tidak terpasang, buka URL di browser
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/message/XC6BA6ZEUJ3FN1")))
             }
         }
 
-        // Set click listener for Telegram ImageView
+        // Menetapkan click listener untuk Telegram ImageView
         telegramImageView.setOnClickListener {
             val telegramIntent = Intent(Intent.ACTION_VIEW)
             telegramIntent.data = Uri.parse("https://t.me/GuideHungry")
@@ -58,7 +58,7 @@ class AboutUsFragment : Fragment() {
             try {
                 startActivity(telegramIntent)
             } catch (e: Exception) {
-                // Handle case where Telegram app is not installed
+                // Menangani kasus dimana aplikasi Telegram tidak terpasang
                 startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/GuideHungry")))
             }
         }
